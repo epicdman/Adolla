@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://adolla.business/sitemap.xml
