@@ -1,0 +1,13 @@
+{
+  "name": "Twilight Zone Smoke Shop",
+  "short_name": "Twilight Zone",
+  "description": "Smoke shop in Tempe, AZ. Open every day, 11 AM to 2 AM. 21+ only.",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#07080c",
+  "background_color": "#07080c",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

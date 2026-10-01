@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No signal | Twilight Zone Smoke Shop</title>
+<meta name="description" content="This page doesn't exist. Twilight Zone Smoke Shop is at 933 E University Dr, Ste 109, Tempe, AZ.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07080c">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,700;125,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080c;--line:#232837;--ink:#eef1f6;--dim:#a8afbe;--glow:#8fd8ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 16px}
+.box{width:100%;max-width:520px;text-align:center}
+.scr{position:relative;aspect-ratio:4/3;border-radius:22px/26px;overflow:hidden;border:14px solid #151924;box-shadow:0 0 0 1px #2c3242,0 0 90px rgba(143,216,255,.14);margin-bottom:28px;background:#05070b}
+canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.55}
+.scr::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.3) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.7) 100%)}
+.ns{position:absolute;left:50%;top:50%;z-index:1;transform:translate(-50%,-50%);padding:10px 18px;background:#05070b;border:2px solid #e6f7ff;font:800 clamp(1.1rem,5vw,1.6rem)/1.1 "Archivo","Arial Black",sans-serif;font-stretch:125%;color:#e6f7ff;white-space:nowrap}
+h1{font:800 clamp(1.6rem,6.5vw,2.4rem)/1.1 "Archivo","Arial Black",sans-serif;font-stretch:125%;margin:0 0 12px;text-shadow:0 0 22px rgba(143,216,255,.3)}
+p{margin:0 0 1rem;color:var(--dim)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:10px;font-weight:600;text-decoration:none;background:var(--glow);color:#051019;margin:8px 0 18px}
+.btn:hover{background:#c4ecff}
+a{color:var(--glow)}
+:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px}
+footer{border-top:1px solid var(--line);padding:18px 16px;text-align:center;color:var(--dim);font-size:.8125rem}
+@media (prefers-reduced-motion:reduce){canvas{opacity:.35}}
+</style>
+</head>
+<body>
+<main>
+ <div class="box">
+  <div class="scr" aria-hidden="true"><canvas id="n" width="128" height="96"></canvas><div class="ns">No signal</div></div>
+  <h1>This page isn&rsquo;t on.</h1>
+  <p>The link might be old or mistyped. The shop, on the other hand, is open every day from 11 AM to 2 AM.</p>
+  <a class="btn" href="/">Back to the homepage</a>
+  <p>933 E University Dr, Ste 109, Tempe, AZ 85288 &middot; <a href="tel:+14802844397">(480) 284-4397</a></p>
+ </div>
+</main>
+<footer>&copy; 2026 Twilight Zone Smoke Shop. 21+ only. Concept site by Adolla &middot; adolla.business &middot; not affiliated with or endorsed by Twilight Zone Smoke Shop</footer>
+<script>
+(function(){var c=document.getElementById('n'),x=c.getContext('2d'),im=x.createImageData(128,96),d=im.data,t=0;
+function draw(){for(var i=0;i<d.length;i+=4){var v=Math.random()*255|0;d[i]=v*.92;d[i+1]=v*.97;d[i+2]=v;d[i+3]=255}x.putImageData(im,0,0)}
+draw();if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+(function f(s){requestAnimationFrame(f);if(s-t<60)return;t=s;draw()})(0);})();
+</script>
+</body>
+</html>
