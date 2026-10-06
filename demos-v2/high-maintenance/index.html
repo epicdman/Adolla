@@ -95,7 +95,13 @@ h1 .c{display:block;font-family:var(--text);font-weight:500;font-size:.34em;lett
 .fine{margin:16px 0 0;font-size:.95rem;color:var(--ink2)}
 .plate{margin:0;position:relative;border:1.5px solid var(--ink);border-radius:14px;background:var(--paper2);overflow:hidden;aspect-ratio:1/1;max-height:560px}
 @media(max-width:959px){.plate{aspect-ratio:4/3.4;max-width:560px;width:100%;justify-self:center}}
-.plate canvas{position:absolute;inset:0;width:100%;height:100%}
+.plate canvas{position:absolute;inset:0;width:100%;height:100%;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.plate .el{position:absolute;left:50%;top:30%;z-index:3;pointer-events:none;width:68px;height:74px;margin-left:-34px;background:#fbfbf8;border:2px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 #1f3fe0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--disp);line-height:1;animation:elup 2.2s ease-out forwards}
+.plate .el small{font:600 10px/1 'IBM Plex Sans',system-ui,sans-serif;align-self:flex-start;margin:-6px 0 4px 7px;color:#4a5057}
+.plate .el b{font-size:26px;font-weight:700;color:#1f3fe0}
+.plate .el span{font:600 10px/1.2 'IBM Plex Sans',system-ui,sans-serif;margin-top:5px;color:var(--ink)}
+@keyframes elup{0%{transform:translateY(10px) scale(.5) rotate(-8deg);opacity:0}12%{transform:translateY(-6px) scale(1.12) rotate(3deg);opacity:1}22%{transform:translateY(-10px) scale(1) rotate(0)}75%{opacity:1}100%{transform:translateY(-80px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.plate .el{animation:none}}
 .plate figcaption{position:absolute;left:14px;bottom:10px;right:14px;font-size:.85rem;color:var(--ink2);display:flex;justify-content:space-between;gap:10px}
 .plate figcaption i{font-style:normal;font-weight:600;color:var(--ink)}
 /* sections */
@@ -246,7 +252,7 @@ address{font-style:normal;font-size:1.15rem;line-height:1.5;margin:0 0 6px}
    </div>
    <figure class="plate">
     <canvas id="flask" aria-hidden="true"></canvas>
-    <figcaption><span><i>Fig. 1</i> Handle with care.</span><span id="hint">Scroll to swirl</span></figcaption>
+    <figcaption><span><i>Fig. 1</i> Handle with care.</span><span id="hint">Tap to shake · scroll to swirl</span></figcaption>
    </figure>
   </div>
  </section>
@@ -476,7 +482,7 @@ function draw(){
  c.fillStyle='#15181b';c.textBaseline='middle';
  var fs=Math.round(lh*.44);c.font='700 '+fs+'px Unbounded, system-ui, sans-serif';c.fillText('Hm',lx+10,ly+lh*.4);
  c.font='500 '+Math.max(9,Math.round(lh*.17))+'px "IBM Plex Sans", system-ui, sans-serif';c.fillStyle='#4a5057';
- c.fillText('411 Mill Ave · Tempe',lx+10,ly+lh*.8);
+ c.fillText('411 Mill Ave',lx+10,ly+lh*.8);
  c.fillStyle='#1f3fe0';c.fillRect(lx+lw-14,ly+8,6,6);
  c.restore();
 }
@@ -497,6 +503,29 @@ function start(){if(!raf&&!RM&&vis)raf=requestAnimationFrame(step)}
 geo();seed();draw();
 if('ResizeObserver' in window)new ResizeObserver(function(){geo();draw()}).observe(cv);
 if(D.fonts&&D.fonts.ready)D.fonts.ready.then(draw);
+/* tap the flask: it sloshes, fizzes, goes "bloop", and a periodic-table tile pops up */
+var EL=[['Bl','Bloop'],['Fz','Fizz'],['Sw','Swirl'],['Hm','High'],['Gl','Glass'],['Bb','Bubble'],['Cl','Cloud'],['Lt','Lit']],taps=0,AC=null;
+function bloop(){
+ try{
+  AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+  if(AC.state==='suspended')AC.resume();
+  for(var k=0;k<3;k++){
+   var t=AC.currentTime+k*.07,o=AC.createOscillator(),g=AC.createGain(),f=300+Math.random()*250+k*90;
+   o.type='sine';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*2.4,t+.06);o.frequency.exponentialRampToValueAtTime(f*.8,t+.14);
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(k?.09:.16,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+.16);
+   o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+.18);
+  }
+ }catch(e){}
+}
+cv.addEventListener('click',function(){
+ bloop();taps++;
+ vel+=(taps%2?1:-1)*(26+Math.random()*16);
+ for(var i=0;i<14;i++)bub.push({x:G.cx+(Math.random()-.5)*G.bw*1.4,y:G.yb-6-Math.random()*20,r:1.6+Math.random()*4,v:1.2+Math.random()*1.6,p:Math.random()*6});
+ if(RM){sl=(taps%2?.4:-.4);draw()}else start();
+ var e=EL[(taps-1)%EL.length],n=D.createElement('span');n.className='el';n.setAttribute('aria-hidden','true');
+ n.innerHTML='<small>'+taps+'</small><b>'+e[0]+'</b><span>'+e[1]+'</span>';
+ n.style.marginLeft=(-34+Math.random()*90-45)+'px';cv.parentNode.appendChild(n);setTimeout(function(){n.remove()},2300);
+});
 if(!RM){
  window.addEventListener('scroll',function(){var y=window.scrollY;vel+=y-lastY;lastY=y},{passive:true});
  if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis)start()}).observe(cv);

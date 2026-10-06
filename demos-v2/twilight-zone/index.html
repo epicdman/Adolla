@@ -100,6 +100,19 @@ h1 small{display:block;font-size:.42em;letter-spacing:.02em;color:var(--glow);ma
 .pic{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4%;padding:8%;text-align:center;background:radial-gradient(circle at 50% 45%,#12324a 0,#0a1622 45%,#05070b 80%)}
 .pic svg{width:44%;height:auto;color:#e6f7ff;filter:drop-shadow(0 0 6px rgba(143,216,255,.75))}
 .pic .nm{font:800 clamp(1.05rem,4.6vw,1.6rem)/1.1 var(--head);font-stretch:125%;text-shadow:0 0 12px rgba(143,216,255,.7)}
+.ears{transform-origin:50% 92%}
+@media (prefers-reduced-motion:no-preference){
+ .ears{animation:sway 5s ease-in-out infinite}
+ .tvw.jolt .ears{animation:wob .55s ease-out}
+ .tvw.jolt .tv{animation:jolt .3s ease-out}
+ .pic .nm,.pic svg{animation:pop .35s cubic-bezier(.2,1.6,.4,1)}
+ .pwr{animation:led 2.4s ease-in-out infinite}
+}
+@keyframes sway{50%{transform:rotate(1.5deg)}}
+@keyframes wob{20%{transform:rotate(-7deg)}45%{transform:rotate(5deg)}70%{transform:rotate(-2deg)}}
+@keyframes jolt{30%{transform:translateY(2px) rotate(-.4deg)}60%{transform:translateY(-1px) rotate(.3deg)}}
+@keyframes pop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes led{50%{opacity:.45}}
 .osd{position:absolute;top:7%;right:8%;z-index:2;font:600 clamp(.9rem,3.6vw,1.25rem)/1 var(--text);color:#7dff9e;text-shadow:0 0 8px rgba(125,255,158,.8);letter-spacing:.04em}
 .l3{position:absolute;left:5%;right:5%;bottom:6%;z-index:2;padding:6px 8px;background:rgba(0,0,0,.72);border-left:3px solid var(--red);font:500 clamp(.6875rem,2.6vw,.8125rem)/1.35 var(--text);color:#fff;text-align:left}
 .bars{position:absolute;inset:0;display:flex}
@@ -393,8 +406,31 @@ function tune(dir){
  cur=cur<0?(dir>0?0:CH.length-1):(cur+dir+CH.length)%CH.length;
  sr.textContent='Channel '+(cur+1)+': '+CH[cur].n+(CH[cur].w?'. '+WARN:'');
  if(reduce){paint(cur);return}
+ blip();var tw=$('.tvw');tw.classList.remove('jolt');void tw.offsetWidth;tw.classList.add('jolt');
  clearTimeout(surfT);scr.classList.add('surf');tvn.draw();
  surfT=setTimeout(function(){paint(cur);scr.classList.remove('surf')},170);
+}
+/* channel change noise: a knob clunk plus a burst of tv static, synthesized (no audio files) */
+var AC=null;
+function blip(){
+ try{
+  AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+  if(AC.state==='suspended')AC.resume();
+  var t=AC.currentTime,n=Math.floor(AC.sampleRate*.28),buf=AC.createBuffer(1,n,AC.sampleRate),d=buf.getChannelData(0);
+  for(var i=0;i<n;i++)d[i]=Math.random()*2-1;
+  var src=AC.createBufferSource(),bp=AC.createBiquadFilter(),g=AC.createGain();
+  src.buffer=buf;bp.type='bandpass';bp.frequency.value=1800+Math.random()*1400;bp.Q.value=.7;
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.16,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.26);
+  src.connect(bp);bp.connect(g);g.connect(AC.destination);src.start(t);src.stop(t+.28);
+  var o=AC.createOscillator(),g2=AC.createGain();o.type='square';
+  o.frequency.setValueAtTime(140,t);o.frequency.exponentialRampToValueAtTime(60,t+.05);
+  g2.gain.setValueAtTime(.12,t);g2.gain.exponentialRampToValueAtTime(.0001,t+.07);
+  o.connect(g2);g2.connect(AC.destination);o.start(t);o.stop(t+.08);
+  var b=AC.createOscillator(),g3=AC.createGain();b.type='sine';
+  b.frequency.setValueAtTime(880+Math.random()*440,t+.2);
+  g3.gain.setValueAtTime(.0001,t+.2);g3.gain.exponentialRampToValueAtTime(.07,t+.22);g3.gain.exponentialRampToValueAtTime(.0001,t+.42);
+  b.connect(g3);g3.connect(AC.destination);b.start(t+.2);b.stop(t+.45);
+ }catch(e){}
 }
 paint(-1);tvn.draw();
 scr.addEventListener('click',function(){tune(1)});

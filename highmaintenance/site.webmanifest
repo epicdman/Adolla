@@ -1,0 +1,13 @@
+{
+  "name": "High Maintenance Smoke Shop",
+  "short_name": "High Maintenance",
+  "description": "Glass-first smoke shop on Mill Ave, Tempe AZ. 21+ with valid ID.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4f3ee",
+  "theme_color": "#f4f3ee",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

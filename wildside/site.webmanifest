@@ -1,0 +1,13 @@
+{
+  "name": "Wild Side Smoke Shop",
+  "short_name": "Wild Side",
+  "description": "Smoke shop on University Dr in Tempe, AZ, by ASU. 21+ only.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#d6b98c",
+  "theme_color": "#14101f",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
