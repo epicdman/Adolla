@@ -108,8 +108,8 @@ h1 .sub{display:inline-block;position:relative;top:-6px;font-family:var(--sans);
 .cap p{margin:0;max-width:22em}
 #best{flex:none;font-weight:800;font-size:13px;background:var(--ink);color:var(--green);padding:3px 8px;white-space:nowrap;font-variant-numeric:tabular-nums;transition:transform .2s}
 #best.new{transform:scale(1.18) rotate(-3deg);background:var(--pink);color:var(--ink)}
-.fl{position:absolute;left:50%;top:38%;font-family:var(--px);font-size:15px;color:var(--ink);background:var(--green);padding:4px 6px;border:2px solid var(--ink);pointer-events:none;z-index:3;animation:fl .9s ease-out forwards}
-@keyframes fl{to{transform:translateY(-70px);opacity:0}}
+.fl{position:absolute;left:50%;top:38%;font-family:var(--px);font-size:22px;color:var(--ink);background:var(--green);padding:6px 10px;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);pointer-events:none;z-index:3;white-space:nowrap;animation:fl 2.2s ease-out forwards}
+@keyframes fl{0%{transform:translateY(0) scale(.6);opacity:0}10%{transform:translateY(-8px) scale(1.15);opacity:1}20%{transform:translateY(-14px) scale(1)}75%{opacity:1}100%{transform:translateY(-90px) scale(1);opacity:0}}
 @media(min-width:760px){.btns{grid-template-columns:1fr 1fr;max-width:560px}}
 @media(min-width:900px){.hero{padding:56px 0 70px}.hero .wrap{grid-template-columns:1.12fr .88fr;align-items:start;gap:48px}.mwrap{margin-top:30px}}
 
@@ -218,13 +218,30 @@ footer.ft a{text-decoration-thickness:2px;display:inline-flex;min-height:44px;al
 @keyframes ov{50%{background:#3a0620}}
 .hA{transform-box:fill-box;transform-origin:85% 100%;animation:nod 2.6s ease-in-out infinite}
 .hB{transform-box:fill-box;transform-origin:100% 50%;animation:nod2 3.1s ease-in-out infinite}
-.tl{transform-box:fill-box;transform-origin:0% 100%;animation:nod2 1.8s ease-in-out infinite}
+.tl{transform-box:fill-box;transform-origin:0% 100%;animation:wag 1.2s ease-in-out infinite}
+@keyframes wag{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(9deg)}}
+.bd{animation:bob 1.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.lg1,.lg2{transform-box:fill-box;transform-origin:50% 0;animation:stp 1.2s ease-in-out infinite}
+.lg2{animation-delay:-.6s}
+@keyframes stp{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.eye{transform-box:fill-box;transform-origin:50% 50%;animation:blk 4.2s infinite}
+@keyframes blk{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.pu{animation:look 5s ease-in-out infinite}
+@keyframes look{0%,40%{transform:translate(0,0)}50%,80%{transform:translate(-4px,1px)}}
+.tg{transform-box:fill-box;transform-origin:100% 50%;animation:flk 2.4s infinite}
+@keyframes flk{0%,70%,100%{transform:scaleX(1)}78%{transform:scaleX(1.7)}86%{transform:scaleX(.6)}}
+.mascot.poke .hA{animation:yelpA .45s ease-out}
+.mascot.poke .hB{animation:yelpB .45s ease-out}
+.mascot.poke .eye{animation:none;transform:scale(1.35)}
+@keyframes yelpA{40%{transform:rotate(-22deg) translateY(-6px)}}
+@keyframes yelpB{40%{transform:rotate(18deg) translateX(-6px)}}
 @keyframes nod{50%{transform:rotate(-7deg)}}
 @keyframes nod2{50%{transform:rotate(6deg)}}
 .mascot.poke{animation:pk .3s}
 @keyframes pk{30%{transform:scale(.96) rotate(-2deg)}70%{transform:scale(1.03) rotate(1deg)}}
 }
-@media(prefers-reduced-motion:reduce){.tick div{animation:none}.fl{animation-duration:.01s}.go .coin,#gate.go{animation:none}html{scroll-behavior:auto}.btn,#best{transition:none}}
+@media(prefers-reduced-motion:reduce){.tick div{animation:none}.fl{animation:none}.go .coin,#gate.go{animation:none}html{scroll-behavior:auto}.btn,#best{transition:none}}
 </style>
 </head>
 <body>
@@ -275,23 +292,25 @@ footer.ft a{text-decoration-thickness:2px;display:inline-flex;min-height:44px;al
    <button type="button" class="mascot" id="mb" aria-label="Poke the two-headed gila monster" aria-describedby="best">
     <svg viewBox="0 0 380 240" aria-hidden="true">
      <g transform="translate(34 0)" stroke="#14110d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
-      <path class="tl" d="M255 132C300 142 330 112 318 80C314 68 302 64 294 70" stroke-width="26"/>
+      <g class="tl">
+      <path d="M255 132C300 142 330 112 318 80C314 68 302 64 294 70" stroke-width="26"/>
       <path d="M255 132C300 142 330 112 318 80C314 68 302 64 294 70" stroke="#ff2e93" stroke-width="18"/>
       <path d="M262 133C300 140 326 114 318 82" stroke-width="18" stroke-dasharray="5 13" opacity=".8"/>
-      <path d="M102 158L94 204M142 166L138 208M214 166L220 208M254 156L264 200" stroke-width="26"/>
-      <path d="M102 158L94 204M142 166L138 208M214 166L220 208M254 156L264 200" stroke="#ff2e93" stroke-width="18"/>
-      <path d="M82 207h20M124 210h22M206 210h24M256 203h26" stroke-width="7"/>
+      </g>
+      <g class="lg1"><path d="M102 158L94 204M214 166L220 208" stroke-width="26"/><path d="M102 158L94 204M214 166L220 208" stroke="#ff2e93" stroke-width="18"/><path d="M82 207h20M206 210h24" stroke-width="7"/></g>
+      <g class="lg2"><path d="M142 166L138 208M254 156L264 200" stroke-width="26"/><path d="M142 166L138 208M254 156L264 200" stroke="#ff2e93" stroke-width="18"/><path d="M124 210h22M256 203h26" stroke-width="7"/></g>
+      <g class="bd">
       <path d="M78 120C70 82 130 64 185 68C245 68 272 92 268 128C264 164 225 176 175 176C122 178 84 160 78 120Z" fill="#ff2e93"/>
       <g fill="#14110d" stroke="none"><ellipse cx="128" cy="102" rx="10" ry="8"/><ellipse cx="170" cy="90" rx="12" ry="8"/><ellipse cx="218" cy="98" rx="11" ry="9"/><ellipse cx="200" cy="140" rx="10" ry="7"/><ellipse cx="148" cy="144" rx="8" ry="6"/><ellipse cx="246" cy="128" rx="7" ry="8"/><ellipse cx="108" cy="138" rx="6" ry="5"/></g>
       <g fill="#ffd6ea" stroke="none"><circle cx="150" cy="116" r="2.4"/><circle cx="188" cy="118" r="2.4"/><circle cx="230" cy="118" r="2.4"/><circle cx="170" cy="160" r="2.4"/><circle cx="130" cy="125" r="2.4"/><circle cx="212" cy="160" r="2.4"/></g>
+      </g>
       <g class="hA">
        <path d="M98 108C82 92 70 78 66 58" stroke-width="36"/>
        <path d="M98 108C82 92 70 78 66 58" stroke="#b6ff00" stroke-width="28"/>
        <ellipse cx="64" cy="42" rx="31" ry="22" transform="rotate(25 64 42)" fill="#b6ff00"/>
        <path d="M38 36C44 50 58 56 74 52"/>
        <g fill="#14110d" stroke="none"><circle cx="44" cy="33" r="2.6"/><circle cx="80" cy="56" r="3"/><circle cx="60" cy="24" r="3"/></g>
-       <rect x="58" y="26" width="28" height="13" rx="2" fill="#14110d"/>
-       <path d="M63 29h6" stroke="#fff" stroke-width="3"/>
+       <g class="eye"><circle cx="70" cy="34" r="8" fill="#fff" stroke-width="3"/><circle class="pu" cx="72" cy="35" r="3.6" fill="#14110d" stroke="none"/></g>
       </g>
       <g class="hB">
        <path d="M86 132C66 138 50 142 34 140" stroke-width="36"/>
@@ -299,7 +318,7 @@ footer.ft a{text-decoration-thickness:2px;display:inline-flex;min-height:44px;al
        <ellipse cx="30" cy="142" rx="29" ry="21" transform="rotate(-10 30 142)" fill="#b6ff00"/>
        <path d="M33 128l10 10M43 128l-10 10" stroke-width="3.5"/>
        <path d="M4 149C12 160 26 160 40 152"/>
-       <path d="M4 152C-4 154-8 160-14 160M-6 155C-8 150-12 150-16 149" stroke="#ff2e93" stroke-width="4.5"/>
+       <path class="tg" d="M4 152C-4 154-8 160-14 160M-6 155C-8 150-12 150-16 149" stroke="#ff2e93" stroke-width="4.5"/>
        <g fill="#14110d" stroke="none"><circle cx="10" cy="140" r="2.6"/><circle cx="50" cy="152" r="3"/><circle cx="24" cy="128" r="3"/></g>
       </g>
      </g>
@@ -462,7 +481,25 @@ mb.addEventListener('click',function(){
  run+=100;clearTimeout(idle);idle=setTimeout(function(){run=0},2500);
  if(run>best){best=run;try{localStorage.setItem(BK,String(best))}catch(e){}showBest();bl.classList.add('new');clearTimeout(bl._t);bl._t=setTimeout(function(){bl.classList.remove('new')},400)}
  mb.classList.remove('poke');void mb.offsetWidth;mb.classList.add('poke');
- var f=D.createElement('span');f.className='fl';f.setAttribute('aria-hidden','true');f.textContent='+100';f.style.marginLeft=(Math.random()*120-80)+'px';mb.parentNode.appendChild(f);setTimeout(function(){f.remove()},1000)});
+ squeak();
+ var f=D.createElement('span');f.className='fl';f.setAttribute('aria-hidden','true');f.textContent=run%1000===0?'+100 COMBO!':'+100';f.style.marginLeft=(Math.random()*120-80)+'px';mb.parentNode.appendChild(f);setTimeout(function(){f.remove()},2300)});
+/* poke noise: synthesized rubber squeak, no audio files. every 10th poke in a run he honks */
+var AC=null;
+function squeak(){
+ try{
+  AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+  if(AC.state==='suspended')AC.resume();
+  var t=AC.currentTime,honk=run%1000===0,o=AC.createOscillator(),g=AC.createGain(),o2=AC.createOscillator(),g2=AC.createGain();
+  o.type=honk?'sawtooth':'square';o2.type='sine';
+  var b=honk?180:520+Math.random()*260;
+  o.frequency.setValueAtTime(b,t);
+  o.frequency.exponentialRampToValueAtTime(b*(honk?.7:2.1),t+.09);
+  o.frequency.exponentialRampToValueAtTime(b*(honk?.5:1.3),t+(honk?.4:.22));
+  o2.frequency.setValueAtTime(honk?6:28,t);o2.connect(g2);g2.gain.value=honk?20:60;g2.connect(o.frequency);
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.18,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+(honk?.45:.25));
+  o.connect(g);g.connect(AC.destination);o.start(t);o2.start(t);o.stop(t+.5);o2.stop(t+.5);
+ }catch(e){}
+}
 })();
 </script>
 </body>
