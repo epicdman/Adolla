@@ -121,7 +121,7 @@ h1 .s{display:table;margin-top:16px;font-size:clamp(18px,5vw,26px);font-weight:6
 .bp i.low{background:linear-gradient(90deg,#ffc3b3,#ff6b6b)}
 .bt.blink{animation:led .2s steps(1,end) 6}
 @keyframes led{50%{background:#2f6fd6}}
-.cap{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 4px 0;font-size:15px;line-height:1.4}
+.cap{display:flex;justify-content:center;align-items:center;gap:12px;margin:12px 4px 0;font-size:15px;line-height:1.4}
 .cap p{margin:0;max-width:22em}
 #best{flex:none;font-weight:800;font-size:13px;background:#fff;color:var(--blue2);border-radius:999px;padding:4px 11px;white-space:nowrap;box-shadow:var(--soft);font-variant-numeric:tabular-nums;transition:transform .2s}
 #best.new{transform:scale(1.15) rotate(-3deg);background:var(--sun);color:var(--ink)}
@@ -386,7 +386,7 @@ footer.ft a{text-decoration-thickness:2px;display:inline-flex;min-height:44px;al
    <p class="warn">WARNING: This product contains nicotine. Nicotine is an addictive chemical.</p>
   </div>
   <div class="mwrap" id="mw">
-   <button type="button" class="puffer" id="pf" aria-label="Blinker game. Press and hold to breathe in harder, let go to ease off. Keep the marker inside the moving zone until the bar fills." aria-describedby="best">
+   <button type="button" class="puffer" id="pf" aria-label="Blinker game. Press and hold to breathe in harder, let go to ease off. Keep the marker inside the moving zone for 10 seconds to hit a blinker." aria-describedby="best">
     <svg viewBox="0 0 360 250" aria-hidden="true">
      <g class="bob">
       <g class="pbody" id="pbody">
@@ -410,7 +410,7 @@ footer.ft a{text-decoration-thickness:2px;display:inline-flex;min-height:44px;al
     <div class="bt" id="bt"><i class="bz" id="bz"></i><i class="bm" id="bm"></i><span class="bl">HOLD TO HIT</span></div>
     <div class="bp"><i id="bpf"></i></div>
    </div>
-   <div class="cap"><p>Hit a blinker: hold to breathe harder, let go to ease off. Keep the puff in the moving zone till the bar fills. Each blinker in a row gets harder.</p><span id="best" aria-live="polite">Hit a blinker</span></div>
+   <div class="cap"><span id="best" aria-live="polite">Hit a blinker</span></div>
   </div>
  </div>
   <svg class="hbase" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80V44c40-20 80-20 110 0 30-34 100-34 130 0 40-24 90-24 120 6 40-30 110-30 140 0 30-22 80-22 110 0 40-30 110-30 140 0 30-24 80-24 110 0 40-26 90-26 120 2 30-20 70-20 120-6L1200 44V80z" fill="#fff"/></svg>
@@ -583,7 +583,7 @@ try{G.best=parseInt(localStorage.getItem(BK),10)||0}catch(e){}
 function chip(){bl.textContent=G.streak?'Streak '+G.streak+' · Best '+G.best:(G.best?'Best streak: '+G.best:'Hit a blinker')}
 function bump(){bl.classList.add('new');clearTimeout(bl._t);bl._t=setTimeout(function(){bl.classList.remove('new')},400)}
 chip();
-function lvl(){var s=G.streak;return{w:Math.max(.1,.3-.022*s),spd:Math.min(1.15,.28+.075*s),gap:Math.max(.42,1.5-.1*s),fill:Math.max(.12,.24-.01*s),drain:.2+.016*s,jit:Math.min(1,s/8)*.035}}
+function lvl(){var s=G.streak;return{w:Math.max(.1,.3-.022*s),spd:Math.min(1.15,.28+.075*s),gap:Math.max(.42,1.5-.1*s),fill:.085,drain:.07+.008*s,jit:Math.min(1,s/8)*.035}}
 function draw(L){
  var tw=bt.clientWidth,span=tw-26;
  bm.style.transform='translateX('+(G.x*span)+'px)';
@@ -594,7 +594,7 @@ function draw(L){
 function idle(){G.x=.5;G.c=.5;G.w=lvl().w;G.p=0;draw()}
 idle();window.addEventListener('resize',function(){if(!G.on)idle()});
 function start(){
- var L=lvl();G.on=true;G.hold=true;G.x=.5;G.v=0;G.c=.5;G.ct=.5;G.w=L.w;G.p=.3;G.t=0;G.nt=.5;
+ var L=lvl();G.on=true;G.hold=true;G.x=.5;G.v=0;G.c=.5;G.ct=.5;G.w=L.w;G.p=.15;G.t=0;G.nt=.5;
  bg.classList.add('on');pf.classList.remove('ex','cough');nz=noiseStart();fx.start();lastT=performance.now();raf=requestAnimationFrame(loop)}
 function loop(t){
  if(!G.on)return;var dt=Math.min(.05,(t-lastT)/1000);lastT=t;G.t+=dt;var L=lvl();
