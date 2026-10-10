@@ -617,7 +617,7 @@ function loop(t){
 function end(){G.on=false;G.hold=false;cancelAnimationFrame(raf);noiseStop();bg.classList.remove('on');pf.classList.remove('in');bm.classList.remove('in');dimp.style.opacity=0}
 function win(){
  end();G.streak++;if(G.streak>G.best){G.best=G.streak;try{localStorage.setItem(BK,String(G.best))}catch(e){}}chip();bump();
- G.p=1;draw();bt.classList.remove('blink');void bt.offsetWidth;bt.classList.add('blink');blinkBeep();
+ G.p=1;draw();bt.classList.remove('blink');void bt.offsetWidth;bt.classList.add('blink');jingle(G.streak);
  var dur=1.5;pb.style.transition='transform '+dur+'s cubic-bezier(.3,.6,.4,1)';pb.style.transform='';
  pf.classList.add('ex');setTimeout(function(){pf.classList.remove('ex')},dur*1000);
  fx.exhale(1,dur);breath(false,1);
@@ -704,7 +704,20 @@ function noiseStart(){try{var a=ac(),t=a.currentTime,n=a.createBufferSource(),f=
  g.gain.setValueAtTime(.0001,t);n.connect(f);f.connect(g);g.connect(a.destination);n.start(t);return{n:n,f:f,g:g}}catch(e){return null}}
 function noiseSet(hold,p){if(!nz)return;try{var t=AC.currentTime;nz.g.gain.setTargetAtTime(hold?.055:.008,t,.06);nz.f.frequency.setTargetAtTime(450+p*1300,t,.1)}catch(e){}}
 function noiseStop(){if(!nz)return;try{var t=AC.currentTime;nz.g.gain.cancelScheduledValues(t);nz.g.gain.setTargetAtTime(.0001,t,.03);nz.n.stop(t+.2)}catch(e){}nz=null}
-function blinkBeep(){try{var a=ac(),t=a.currentTime;for(var i=0;i<3;i++){var o=a.createOscillator(),gg=a.createGain(),at=t+i*.2;o.type='square';o.frequency.value=2200;gg.gain.setValueAtTime(.0001,at);gg.gain.exponentialRampToValueAtTime(.035,at+.01);gg.gain.setValueAtTime(.035,at+.08);gg.gain.exponentialRampToValueAtTime(.0001,at+.1);o.connect(gg);gg.connect(a.destination);o.start(at);o.stop(at+.12)}}catch(e){}}
+/* blinker jingle: a dreamy bell arpeggio (maj9) that lands on a soft chord, through a little echo.
+   it climbs a whole step per streak level (capped), so deeper streaks sound higher */
+function jingle(n){try{var a=ac(),t=a.currentTime+.02,root=440*Math.pow(2,(3+Math.min(n-1,6)*2)/12),
+  out=a.createGain(),dl=a.createDelay(),fb=a.createGain(),lp=a.createBiquadFilter();
+ out.gain.value=.9;dl.delayTime.value=.19;fb.gain.value=.32;lp.type='lowpass';lp.frequency.value=2600;
+ out.connect(a.destination);out.connect(dl);dl.connect(lp);lp.connect(fb);fb.connect(dl);lp.connect(a.destination);
+ function bell(semi,at,len,vol){var f=root*Math.pow(2,semi/12);[[1,'sine',1],[2,'sine',.28],[3.01,'triangle',.08]].forEach(function(h){
+  var o=a.createOscillator(),g=a.createGain();o.type=h[1];o.frequency.value=f*h[0];
+  g.gain.setValueAtTime(.0001,at);g.gain.exponentialRampToValueAtTime(vol*h[2],at+.006);g.gain.exponentialRampToValueAtTime(.0001,at+len/(h[0]>1?2:1));
+  o.connect(g);g.connect(out);o.start(at);o.stop(at+len+.05)})}
+ [0,4,7,11,14].forEach(function(st,i){bell(st,t+i*.085,.9,.075)});
+ [7,11,14,19].forEach(function(st){bell(st,t+.5,1.6,.05)});
+ bell(26,t+.5,.6,.025);bell(31,t+.62,.5,.018);
+ setTimeout(function(){try{out.disconnect();lp.disconnect()}catch(e){}},4000)}catch(e){}}
 function burst(at,fq,vol,dur){var a=AC,n=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();n.buffer=NB;f.type='lowpass';f.frequency.value=fq;n.connect(f);f.connect(g);g.connect(a.destination);
  g.gain.setValueAtTime(.0001,at);g.gain.exponentialRampToValueAtTime(vol,at+.012);g.gain.exponentialRampToValueAtTime(.0001,at+dur);n.start(at);n.stop(at+dur+.05)}
 function coughSnd(){try{var a=ac(),t=a.currentTime;for(var i=0;i<3;i++){burst(t+i*.36,900-i*120,.24,.14);burst(t+i*.36+.09,600-i*80,.12,.12)}}catch(e){}}
