@@ -1,0 +1,13 @@
+{
+  "name": "Adam's Smoke & Vape",
+  "short_name": "Adam's",
+  "description": "Smoke and vape shop on W University Dr in Tempe, AZ. 21+ only.",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#fff3dc",
+  "theme_color": "#0b1622",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
