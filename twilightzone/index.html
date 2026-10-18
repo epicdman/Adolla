@@ -163,15 +163,6 @@ h1 small{display:block;font:400 clamp(1.35rem,5vw,2rem)/1 var(--crt);letter-spac
 @keyframes jit{50%{transform:translate(2px,-1px)}}
 @keyframes flick{0%,91%,93%,97%,100%{opacity:1}92%,96%{opacity:.35}}
 
-/* ticker */
-.ticker{position:relative;z-index:1;display:flex;align-items:stretch;overflow:hidden;border-block:1px solid var(--line);background:rgba(5,6,10,.85);font:400 1.35rem/1 var(--crt);letter-spacing:.06em;color:#dfe8f7}
-.ticker .live{position:relative;z-index:2;box-shadow:8px 0 14px rgba(5,6,10,.9);flex:none;display:flex;align-items:center;gap:8px;padding:12px 14px;background:var(--red);color:#1a0302;letter-spacing:.12em}
-.ticker .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#1a0302;animation:led 1.2s steps(2) infinite}
-.crawl{display:flex;white-space:nowrap;padding:12px 0}
-.crawl span{padding-right:2.5em}
-.crawl em{display:inline-block;width:.45em;height:.45em;margin:0 .9em;background:var(--red);vertical-align:.15em}
-@media (prefers-reduced-motion:no-preference){.crawl{animation:crawl 38s linear infinite}.ticker:hover .crawl{animation-play-state:paused}}
-@keyframes crawl{to{transform:translateX(-50%)}}
 
 /* sections tune in like channels */
 section{position:relative;padding:72px 0;border-top:1px solid var(--line);overflow:hidden}
@@ -366,10 +357,6 @@ footer strong{color:var(--ink);font-weight:500}
   </div>
  </div>
 
- <div class="ticker" aria-hidden="true">
-  <span class="live">LIVE</span>
-  <div class="crawl"><span>OPEN EVERY DAY 11 AM &ndash; 2 AM<em></em>933 E UNIVERSITY DR, STE 109, TEMPE<em></em>GLASS &middot; PAPERS &middot; HOOKAH &middot; VAPES &middot; CIGARS<em></em>21+ WITH VALID ID<em></em>CARDS &amp; TAP-TO-PAY<em></em>(480) 284-4397<em></em></span><span>OPEN EVERY DAY 11 AM &ndash; 2 AM<em></em>933 E UNIVERSITY DR, STE 109, TEMPE<em></em>GLASS &middot; PAPERS &middot; HOOKAH &middot; VAPES &middot; CIGARS<em></em>21+ WITH VALID ID<em></em>CARDS &amp; TAP-TO-PAY<em></em>(480) 284-4397<em></em></span></div>
- </div>
 
  <section id="carry" aria-labelledby="carry-h" data-ch="02" data-name="What we carry">
   <span class="flash" aria-hidden="true"></span>
