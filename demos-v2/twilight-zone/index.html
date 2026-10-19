@@ -38,7 +38,7 @@
   --osd:'VT323','Courier New',monospace;
   /* one TV unit: the set is drawn 560 x 440 units, scaled to the viewport */
   --u:min(1px, calc((100vw - 32px) / 640), calc((100vh - 330px) / 470));
-  --rx:-13deg; --ry:-29deg; --px:0deg; --py:0deg;
+  --rx:-6deg; --ry:-15deg; --px:0deg; --py:0deg;
 }
 *{box-sizing:border-box}
 html{background:var(--room);-webkit-text-size-adjust:100%}
@@ -112,6 +112,12 @@ a{color:inherit}
 .l-f,.l-t,.l-l,.l-r{top:calc(-34 * var(--u))}
 .tv > .l-t{top:calc(-78 * var(--u))}
 .f-front,.f-l,.f-r,.f-t,.f-b,.l-f,.l-t,.l-l,.l-r,.t-k{backface-visibility:hidden}
+/* lighting follows the turn (JS sets --b-* from each face's angle to one lamp up and to the left) */
+.f-front{filter:brightness(var(--b-f,1))}
+.f-l,.t-l,.l-l{filter:brightness(var(--b-l,1))}
+.f-r,.t-r,.l-r{filter:brightness(var(--b-r,1))}
+.f-t,.t-t,.l-t{filter:brightness(var(--b-t,1))}
+.f-b,.t-b{filter:brightness(var(--b-b,1))}
 .l-f{left:calc(214 * var(--u));width:calc(132 * var(--u));height:calc(34 * var(--u));transform:translateZ(calc(-14 * var(--u)));background:#1a1b1d;padding:calc(5 * var(--u));border-radius:calc(2 * var(--u)) calc(2 * var(--u)) 0 0}
 .l-f span{display:flex;align-items:center;justify-content:center;height:100%;border-radius:calc(2 * var(--u));background:linear-gradient(180deg,#2a1210,#1c0b09);color:#4f2a24;font:700 calc(15 * var(--u))/1 var(--ui);font-stretch:118%;letter-spacing:.24em;padding-left:.24em;transition:background .6s,color .6s,box-shadow .6s}
 .on-air .l-f span{background:radial-gradient(ellipse at 50% 40%,#ff6b4e,#d8402c 55%,#a3271a);color:#fff2ea;text-shadow:0 0 calc(6 * var(--u)) rgba(255,220,200,.8);box-shadow:0 0 calc(18 * var(--u)) rgba(216,64,44,.7),0 0 calc(50 * var(--u)) rgba(216,64,44,.35)}
@@ -208,12 +214,13 @@ a{color:inherit}
 .is-inspecting .tvwrap{z-index:61}
 .inspecting .sway{animation:none}
 .inspecting .floor{opacity:0}
-.inspecting .stage{cursor:grab;touch-action:none;--po:50% 30%}
+.inspecting .stage{cursor:grab;touch-action:none;--po:50% 30%;-webkit-user-select:none;user-select:none}
 .dragging .stage{cursor:grabbing}
 .ihud{position:fixed;z-index:62;left:0;right:0;pointer-events:none;opacity:0;transition:opacity .4s}
 .is-inspecting .ihud{opacity:1;transition:opacity .5s .35s}
 .ihud *{pointer-events:auto}
-.ihud.tophud{top:0;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;gap:16px}
+.ihud.tophud{top:0;display:flex;justify-content:flex-end;align-items:center;padding:12px 20px;gap:16px;background:linear-gradient(180deg,rgba(7,8,10,.94),rgba(7,8,10,.72));border-bottom:1px solid rgba(255,255,255,.09);box-shadow:0 14px 34px rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ihud.tophud::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(196,58,44,.7) 30%,rgba(196,58,44,.7) 70%,transparent)}
 .ihud .hint{font:400 19px/1.2 var(--osd);letter-spacing:.12em;color:var(--dim);text-transform:uppercase}
 .ihud .x{min-height:44px;white-space:nowrap}
 .js .inspecting .hint-inspect{visibility:hidden}
@@ -330,7 +337,7 @@ table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-
   .hours-g{gap:50px}
 }
 @media (max-width:760px){
-  :root{--u:min(1px, calc((100vw - 24px) / 600)); --ry:-24deg; --rx:-9deg}
+  :root{--u:min(1px, calc((100vw - 24px) / 600)); --ry:-13deg; --rx:-5deg}
   .top nav{display:none}
   .room{padding:18px 0 26px}
   .listing{grid-template-columns:1fr;gap:16px;padding-top:18px}
@@ -408,7 +415,7 @@ table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-
                     <div class="osd-t" aria-hidden="true"><span>CH 03</span><span class="azclock">&nbsp;</span></div>
                     <h1 class="tv-title"><span class="t1">Twilight Zone</span><span class="t2">Smoke Shop</span></h1>
                     <p class="tv-status" id="tvStatus"><b>DAILY</b>11 AM&ndash;2 AM</p>
-                    <div class="osd-b" aria-hidden="true"><span>TEMPE AZ</span><span>(480) 284-4397</span></div>
+                    <div class="osd-b" aria-hidden="true"><span>21+ ONLY</span><span>(480) 284-4397</span></div>
                   </div>
                   <div class="ch" data-ch="4" hidden aria-hidden="true">
                     <div class="osd-t"><span>CH 04</span><span class="azclock">&nbsp;</span></div>
@@ -592,7 +599,7 @@ table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-
 
 <div class="inspect-bg" id="ibg" aria-hidden="true"></div>
 <div class="ihud tophud" id="ihudTop" role="dialog" aria-label="Inspecting the TV set" hidden>
-  <p class="hint" id="ihint">Drag to turn it<span class="kb"> &middot; Esc to put it back</span></p>
+  <p class="hint sr" id="ihint">Drag to turn it<span class="kb"> &middot; Esc to put it back</span></p>
   <button class="btn x" type="button" id="iclose">Put it back</button>
 </div>
 <div class="ihud remote" id="ihudRemote" hidden>
@@ -787,7 +794,21 @@ table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-
     var names = {3:'Channel 3, on air', 4:'Channel 4, hours: every day 11 AM to 2 AM', 5:'Channel 5, what we carry', 6:'Channel 6, directions. Open in Maps link on screen.', 7:'Channel 7, call (480) 284-4397. Call link on screen.', 13:'Channel 13. Nothing.'};
     liveEl.textContent = names[n] || '';
   }
-  function setRot(){ tv.style.setProperty('--ry', ry + 'deg'); tv.style.setProperty('--rx', rx + 'deg'); }
+  // one lamp up and to the left of the viewer: each face's brightness comes from its angle to it, so the shading
+  // changes as the set turns (it used to be painted flat per face)
+  var LAMP = (function(){ var v = [-.55, -.55, .63], m = Math.hypot(v[0], v[1], v[2]); return [v[0]/m, v[1]/m, v[2]/m]; })();
+  var FACES = {f:[0,0,1], l:[-1,0,0], r:[1,0,0], t:[0,-1,0], b:[0,1,0]};
+  function light(){
+    var cs = getComputedStyle(tv), num = function(n){ return parseFloat(cs.getPropertyValue(n)) || 0; };
+    var by = (num('--ry') + num('--px')) * Math.PI / 180, bx = (num('--rx') + num('--py')) * Math.PI / 180;
+    Object.keys(FACES).forEach(function(k){
+      var n = FACES[k], x = n[0] * Math.cos(by) + n[2] * Math.sin(by), z = -n[0] * Math.sin(by) + n[2] * Math.cos(by), y = n[1];
+      var y2 = y * Math.cos(bx) - z * Math.sin(bx), z2 = y * Math.sin(bx) + z * Math.cos(bx);
+      var d = Math.max(0, x * LAMP[0] + y2 * LAMP[1] + z2 * LAMP[2]);
+      tv.style.setProperty('--b-' + k, (k === 'f' ? .9 + .22 * d : .66 + .7 * d).toFixed(3));
+    });
+  }
+  function setRot(){ tv.style.setProperty('--ry', ry + 'deg'); tv.style.setProperty('--rx', rx + 'deg'); light(); }
   function enter(){
     if(inspecting) return;
     inspecting = true; lastFocus = document.activeElement;
@@ -813,7 +834,7 @@ table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-
     wrapEl.style.transform = '';
     root.classList.remove('is-inspecting'); wrapEl.classList.remove('inspecting');
     root.style.overflow = '';
-    tv.style.removeProperty('--ry'); tv.style.removeProperty('--rx');
+    tv.style.removeProperty('--ry'); tv.style.removeProperty('--rx'); light();
     hudT.hidden = true; hudR.hidden = true;
     outside.forEach(function(n){ n && n.removeAttribute('inert'); });
     $$('.key').forEach(function(k){ k.tabIndex = -1; });
@@ -830,6 +851,7 @@ table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-
     var map = {ArrowLeft:[0,-8], ArrowRight:[0,8], ArrowUp:[6,0], ArrowDown:[-6,0]};
     if(map[e.key] && !(e.target.closest && e.target.closest('.tune'))){ e.preventDefault(); ry = clamp(ry + map[e.key][1], -55, 55); rx = clamp(rx + map[e.key][0], -28, 18); setRot(); }
   });
+  light(); addEventListener('resize', light);
   function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
 
   // drag to turn
@@ -854,9 +876,9 @@ table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-
     hero.addEventListener('pointermove', function(e){
       if(RM || inspecting) return;
       var r = hero.getBoundingClientRect(), nx = (e.clientX - r.left) / r.width - .5, ny = (e.clientY - r.top) / r.height - .5;
-      tv.style.setProperty('--px', (nx * 7).toFixed(2) + 'deg'); tv.style.setProperty('--py', (-ny * 4).toFixed(2) + 'deg');
+      tv.style.setProperty('--px', (nx * 7).toFixed(2) + 'deg'); tv.style.setProperty('--py', (-ny * 4).toFixed(2) + 'deg'); light();
     });
-    hero.addEventListener('pointerleave', function(){ tv.style.setProperty('--px', '0deg'); tv.style.setProperty('--py', '0deg'); });
+    hero.addEventListener('pointerleave', function(){ tv.style.setProperty('--px', '0deg'); tv.style.setProperty('--py', '0deg'); light(); });
   }
 
   /* ---------- reveal ---------- */
