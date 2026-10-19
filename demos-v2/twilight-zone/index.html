@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Twilight Zone Smoke Shop | Tempe, AZ | Open daily until 2 AM</title>
-<meta name="description" content="Twilight Zone Smoke Shop at 933 E University Dr in Tempe, AZ. Glassware, rolling papers, hookah and shisha, vapes, e-liquids, cigars, tobacco and accessories. Open every day 11 AM to 2 AM. 21+ with valid ID.">
-<meta name="theme-color" content="#07080c">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Twilight Zone Smoke Shop at 933 E University Dr, Ste 109 in Tempe, AZ. Glassware, rolling papers, hookah and shisha, vapes, e-liquids, nicotine pouches, cigars, tobacco and accessories. Open every day 11 AM to 2 AM. 21+ with valid ID.">
+<meta name="theme-color" content="#08090b">
 <link rel="canonical" href="https://adolla.business/demos-v2/twilight-zone/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://adolla.business/demos-v2/twilight-zone/">
@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://adolla.business/demos-v2/twilight-zone/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Twilight Zone Smoke Shop, Tempe, AZ. 21+.">
+<meta property="og:image:alt" content="A late-90s television glowing in a dark room, its screen reading Twilight Zone Smoke Shop.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Twilight Zone Smoke Shop | Tempe, AZ">
 <meta name="twitter:description" content="Late-night smoke shop on University Drive in Tempe. Open every day, 11 AM to 2 AM. 21+ only.">
@@ -26,673 +26,851 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Schibsted+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Store","name":"Twilight Zone Smoke Shop","url":"https://adolla.business/demos-v2/twilight-zone/","image":"https://adolla.business/demos-v2/twilight-zone/og.png","description":"Your go-to destination for premium smoking accessories, vapes, cigars, and more.","telephone":"+1-480-284-4397","address":{"@type":"PostalAddress","streetAddress":"933 E University Dr, Ste 109","addressLocality":"Tempe","addressRegion":"AZ","postalCode":"85288","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:00","closes":"02:00"}],"paymentAccepted":"Cards, tap-to-pay","amenityFeature":{"@type":"LocationFeatureSpecification","name":"Wheelchair-accessible entrance","value":true}}
-</script>
-<script>(function(r){r.className='js';try{var t=+localStorage.getItem('tz21');if(t&&t<=Date.now()+6e4&&Date.now()-t<2592e6)r.className='js v'}catch(e){}})(document.documentElement)</script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Libre+Caslon+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=VT323&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Twilight Zone Smoke Shop","url":"https://adolla.business/demos-v2/twilight-zone/","image":"https://adolla.business/demos-v2/twilight-zone/og.png","telephone":"+1-480-284-4397","address":{"@type":"PostalAddress","streetAddress":"933 E University Dr, Ste 109","addressLocality":"Tempe","addressRegion":"AZ","postalCode":"85288","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"11:00","closes":"02:00"}],"paymentAccepted":"Cards, tap-to-pay","amenityFeature":{"@type":"LocationFeatureSpecification","name":"Wheelchair-accessible entrance","value":true}}</script>
 <style>
-:root{--bg:#07080c;--bg2:#0b0d13;--panel:#10131b;--line:#232837;--ink:#eef1f6;--dim:#a8afbe;--glow:#8fd8ff;--glow2:rgba(143,216,255,.14);--red:#ff5b4f;--amb:#ffb347;--grn:#7dff9e;
- --head:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;--text:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--crt:"VT323",ui-monospace,"Courier New",monospace;--hdr:64px;--sp:0}
+:root{
+  --room:#08090b; --ink:#e7e3d7; --dim:#a3a197; --faint:#55554f; --rule:#1d1e1c;
+  --phos:#dce8ff; --glow:154,182,255; --red:#e3553f; --red-d:#5a1810;
+  --disp:'Libre Caslon Display','Big Caslon','Book Antiqua',Georgia,serif;
+  --text:'Newsreader',Georgia,'Times New Roman',serif;
+  --ui:'Archivo','Arial Narrow','Helvetica Neue',Arial,sans-serif;
+  --osd:'VT323','Courier New',monospace;
+  /* one TV unit: the set is drawn 560 x 440 units, scaled to the viewport */
+  --u:min(1px, calc((100vw - 32px) / 640), calc((100vh - 330px) / 470));
+  --rx:-13deg; --ry:-29deg; --px:0deg; --py:0deg;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--text);overflow-x:hidden}
-a{color:var(--glow)}
-p{margin:0 0 1rem}
-h1,h2{font-family:var(--head);font-weight:800;font-stretch:76%;font-variation-settings:"opsz" 96;line-height:.98;margin:0;letter-spacing:-.005em}
-h2{font-size:clamp(2.1rem,8vw,3.6rem);margin-bottom:14px;text-shadow:0 0 22px rgba(143,216,255,.28)}
-h3{font:600 1.0625rem/1.3 var(--text);margin:0}
-.wrap{position:relative;width:100%;max-width:1160px;margin:0 auto;padding:0 16px}
-:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px}
-.skip{position:absolute;left:8px;top:-80px;z-index:4000;background:var(--glow);color:#051019;padding:12px 16px;border-radius:8px;font-weight:600;text-decoration:none}
-.skip:focus{top:8px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.nojs{margin:0;padding:12px 16px;background:var(--glow);color:#051019;text-align:center;font-weight:600}
-main:focus{outline:none}
-main,footer{position:relative;z-index:1}
-section,#top{scroll-margin-top:calc(var(--hdr) + 8px)}
+html{background:var(--room);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--room);color:var(--ink);font:400 18px/1.6 var(--text);font-variant-numeric:lining-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.09;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+::selection{background:var(--red);color:#fff}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#000;padding:10px 14px;z-index:300;font:600 15px var(--ui)}.skip:focus{left:8px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.kicker{font:600 12px/1 var(--ui);font-stretch:87.5%;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.kicker b{color:var(--red);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7em;min-height:50px;padding:0 22px;font:600 15px/1 var(--ui);font-stretch:87.5%;letter-spacing:.1em;text-transform:uppercase;font-variant-numeric:tabular-nums lining-nums;text-decoration:none;color:var(--ink);border:1px solid #4a4a45;background:transparent;border-radius:2px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{border-color:var(--ink)}
+.btn.solid{background:var(--ink);border-color:var(--ink);color:#0b0b0a}
+.btn.solid:hover{background:#fff}
+.btn .n{letter-spacing:.04em}
+.btn svg{width:15px;height:15px;flex:none}
+.warn{font:400 13px/1.5 var(--ui);font-stretch:93%;letter-spacing:.01em;color:var(--dim)}
 
-/* the room: dark, lit by the screen, with the CRT's scanlines over the whole page */
-.sky{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(#0c1220,var(--bg) 55%)}
-.crt{position:fixed;inset:0;z-index:70;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.16) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.45) 100%)}
-.roller{position:fixed;left:0;right:0;top:-12vh;height:12vh;z-index:69;pointer-events:none;background:linear-gradient(to bottom,transparent,rgba(143,216,255,.035),transparent)}
+/* ---------- top line ---------- */
+.top{position:relative;z-index:5}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;height:64px;border-bottom:1px solid var(--rule)}
+.top nav{display:flex;gap:26px}
+.top nav a,.top .call{font:600 12px/1 var(--ui);font-stretch:87.5%;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--dim);padding:10px 0}
+.top nav a:hover,.top .call:hover{color:var(--ink)}
+.top .call{color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.12em}
+.top .mark{font:400 15px/1 var(--osd);letter-spacing:.14em;color:var(--faint)}
 
-/* header */
-.top{position:sticky;top:0;z-index:50;background:rgba(7,8,12,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:calc(var(--sp) * 100%);background:linear-gradient(90deg,#e8e8e8 0 14.28%,#e8d44d 0 28.57%,#5fd6e0 0 42.85%,#62c46a 0 57.14%,#c95bc4 0 71.42%,#d6453d 0 85.71%,#3d52c9 0);background-size:100vw 100%}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:var(--hdr)}
-.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:var(--ink);text-decoration:none;font:800 1.2rem/1 var(--head);font-stretch:80%;letter-spacing:.01em}
-.brand svg{width:30px;height:30px;flex:none;filter:drop-shadow(0 0 6px rgba(143,216,255,.6))}
-.nav{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}
-.nav a{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 10px;color:var(--dim);text-decoration:none;font-weight:500;font-size:.9688rem;border-radius:8px}
-.nav a b{font:400 1.05rem/1 var(--crt);color:#5d6578;letter-spacing:.04em}
-.nav a:hover,.nav a.here{color:var(--ink);background:var(--panel)}
-.nav a.here b{color:var(--grn);text-shadow:0 0 8px rgba(125,255,158,.6)}
-.nav .call{display:none}
+/* ---------- the room ---------- */
+.room{position:relative;overflow:hidden;padding:26px 0 34px;
+  background:
+   radial-gradient(ellipse 80% 70% at 50% 45%,transparent 50%,rgba(0,0,0,.7)),
+   radial-gradient(ellipse 46% 52% at 50% 40%,rgba(var(--glow),.10),transparent 70%),
+   linear-gradient(180deg,#0b0c0e 0%,#0a0b0d 62%,#060707 62.2%,#050505 100%)}
 
-/* buttons */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:10px;font:600 1.0625rem/1 var(--text);text-decoration:none;border:1.5px solid var(--glow);cursor:pointer;transition:background-color .15s,color .15s,box-shadow .2s,transform .15s}
-.btn svg{width:20px;height:20px;flex:none}
-.btn.p{background:var(--glow);color:#051019;box-shadow:0 0 0 rgba(143,216,255,0)}
-.btn.p:hover{background:#c4ecff;box-shadow:0 0 28px rgba(143,216,255,.45)}
-.btn.s{background:transparent;color:var(--glow)}
-.btn.s:hover{background:var(--glow2)}
-.btn:active{transform:translateY(1px)}
+/* the set and its stage */
+.tvwrap{position:relative;width:calc(640 * var(--u));margin:0 auto;padding-top:calc(30 * var(--u));transform-origin:50% 50%;transition:transform .85s cubic-bezier(.2,.75,.15,1)}
+.stage{position:relative;width:calc(560 * var(--u));height:calc(440 * var(--u));margin:0 auto;perspective:calc(2000 * var(--u));perspective-origin:var(--po,90% -10%)}
+.sway{position:absolute;inset:0;transform-style:preserve-3d;animation:sway 14s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotateY(0deg)}50%{transform:rotateY(2.2deg)}}
+.tv{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(calc(var(--rx) + var(--py))) rotateY(calc(var(--ry) + var(--px)));transition:transform .85s cubic-bezier(.2,.75,.15,1)}
+.dragging .tv{transition:none}
+.tv > i,.tv > div{position:absolute;display:block}
+/* shell */
+.f-front{transform:translateZ(1px);left:0;top:0;width:calc(560 * var(--u));height:calc(440 * var(--u));border-radius:calc(7 * var(--u));
+  background:linear-gradient(180deg,#303135 0%,#232427 40%,#1c1d20 100%);
+  box-shadow:inset 0 calc(1.5 * var(--u)) 0 rgba(255,255,255,.12),inset 0 calc(-2 * var(--u)) 0 rgba(0,0,0,.4),inset calc(1.5 * var(--u)) 0 0 rgba(255,255,255,.05)}
+.f-l,.f-r{top:0;width:calc(70 * var(--u));height:calc(440 * var(--u));transform-origin:0 50%;background:linear-gradient(90deg,rgba(255,255,255,.10),transparent 12%),linear-gradient(180deg,#2b2c30,#18191b)}
+.f-l{left:calc(-70 * var(--u));transform-origin:100% 50%;transform:rotateY(-90deg)}
+.f-r{left:calc(560 * var(--u));transform:rotateY(90deg)}
+.f-t,.f-b{left:0;width:calc(560 * var(--u));height:calc(70 * var(--u));transform-origin:50% 0;transform:rotateX(-90deg)}
+.f-t{top:calc(-70 * var(--u));transform-origin:50% 100%;transform:rotateX(90deg);background:linear-gradient(180deg,#4a4c50,#393b3e 80%,#2a2b2e)}
+.f-t::after{content:"";position:absolute;inset:0;transition:background 1s}
+.on-air .f-t::after{background:radial-gradient(ellipse 22% 90% at 50% 45%,rgba(216,64,44,.38),transparent 70%)}
+.f-b{top:calc(440 * var(--u));background:#0a0a0b}
+/* tube housing (tapered) */
+.t-l,.t-r{top:calc(10 * var(--u));width:calc(351.71 * var(--u));height:calc(420 * var(--u))}
+.t-l{left:calc(10 * var(--u));transform-origin:0 50%;transform:translateZ(calc(-70 * var(--u))) rotateY(75.17deg);clip-path:polygon(0 0,100% calc(70 * var(--u)),100% calc(100% - 70 * var(--u)),0 100%);
+  background:repeating-linear-gradient(180deg,transparent 0 calc(9 * var(--u)),rgba(0,0,0,.7) calc(9 * var(--u)) calc(13 * var(--u))) calc(40 * var(--u)) 50% / calc(120 * var(--u)) calc(150 * var(--u)) no-repeat,linear-gradient(90deg,#1b1c1f,#0d0e0f)}
+.t-r{left:calc(198.29 * var(--u));transform-origin:100% 50%;transform:translateZ(calc(-70 * var(--u))) rotateY(-75.17deg);clip-path:polygon(0 calc(70 * var(--u)),100% 0,100% 100%,0 calc(100% - 70 * var(--u)));
+  background:repeating-linear-gradient(180deg,transparent 0 calc(9 * var(--u)),rgba(0,0,0,.7) calc(9 * var(--u)) calc(13 * var(--u))) calc(130 * var(--u)) 50% / calc(120 * var(--u)) calc(150 * var(--u)) no-repeat,linear-gradient(270deg,#25262a,#121315 85%)}
+.t-t,.t-b{left:calc(10 * var(--u));width:calc(540 * var(--u));height:calc(347.13 * var(--u))}
+.t-t{top:calc(10 * var(--u));transform-origin:50% 0;transform:translateZ(calc(-70 * var(--u))) rotateX(-78.37deg);clip-path:polygon(0 0,100% 0,calc(100% - 90 * var(--u)) 100%,calc(90 * var(--u)) 100%);
+  background:repeating-linear-gradient(90deg,transparent 0 calc(9 * var(--u)),rgba(0,0,0,.65) calc(9 * var(--u)) calc(13 * var(--u))) 50% calc(70 * var(--u)) / calc(240 * var(--u)) calc(110 * var(--u)) no-repeat,linear-gradient(180deg,#36383c,#1f2023)}
+.t-b{top:calc(82.87 * var(--u));transform-origin:50% 100%;transform:translateZ(calc(-70 * var(--u))) rotateX(78.37deg);clip-path:polygon(calc(90 * var(--u)) 0,calc(100% - 90 * var(--u)) 0,100% 100%,0 100%);background:#080809}
+.t-k{left:calc(100 * var(--u));top:calc(80 * var(--u));width:calc(360 * var(--u));height:calc(280 * var(--u));transform:translateZ(calc(-410 * var(--u))) rotateY(180deg);background:#121315}
+/* on-air lamp sitting on the cabinet */
+.l-f,.l-t,.l-l,.l-r{top:calc(-34 * var(--u))}
+.tv > .l-t{top:calc(-78 * var(--u))}
+.f-front,.f-l,.f-r,.f-t,.f-b,.l-f,.l-t,.l-l,.l-r,.t-k{backface-visibility:hidden}
+.l-f{left:calc(214 * var(--u));width:calc(132 * var(--u));height:calc(34 * var(--u));transform:translateZ(calc(-14 * var(--u)));background:#1a1b1d;padding:calc(5 * var(--u));border-radius:calc(2 * var(--u)) calc(2 * var(--u)) 0 0}
+.l-f span{display:flex;align-items:center;justify-content:center;height:100%;border-radius:calc(2 * var(--u));background:linear-gradient(180deg,#2a1210,#1c0b09);color:#4f2a24;font:700 calc(15 * var(--u))/1 var(--ui);font-stretch:118%;letter-spacing:.24em;padding-left:.24em;transition:background .6s,color .6s,box-shadow .6s}
+.on-air .l-f span{background:radial-gradient(ellipse at 50% 40%,#ff6b4e,#d8402c 55%,#a3271a);color:#fff2ea;text-shadow:0 0 calc(6 * var(--u)) rgba(255,220,200,.8);box-shadow:0 0 calc(18 * var(--u)) rgba(216,64,44,.7),0 0 calc(50 * var(--u)) rgba(216,64,44,.35)}
+.l-t{left:calc(214 * var(--u));width:calc(132 * var(--u));height:calc(44 * var(--u));transform-origin:50% 100%;transform:translateZ(calc(-14 * var(--u))) rotateX(90deg);background:#2c2d30}
+.l-l,.l-r{width:calc(44 * var(--u));height:calc(34 * var(--u));transform-origin:0 50%;background:#111213}
+.l-l{left:calc(170 * var(--u));transform-origin:100% 50%;transform:translateZ(calc(-14 * var(--u))) rotateY(-90deg)}
+.l-r{left:calc(346 * var(--u));transform:translateZ(calc(-14 * var(--u))) rotateY(90deg)}
+/* floor contact shadow + light spill */
+.floor{left:calc(-260 * var(--u));top:calc(440 * var(--u));width:calc(1080 * var(--u));height:calc(760 * var(--u));transform-origin:50% 0;transform:translateZ(calc(300 * var(--u))) rotateX(-90deg);pointer-events:none;transition:opacity .5s;
+  background:radial-gradient(ellipse 30% 30% at 50% 66%,#000,rgba(0,0,0,.85) 45%,transparent 72%),radial-gradient(ellipse 40% 36% at 50% 26%,rgba(var(--glow),.22),rgba(var(--glow),.06) 50%,transparent 75%)}
 
-/* hero */
-.hero{position:relative;overflow:hidden;padding:28px 0 48px;isolation:isolate}
-.room{position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 50% at 72% 46%,rgba(143,216,255,.14),transparent 70%);opacity:.75}
-.hgrid{display:grid;gap:36px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:6px 14px 6px 10px;border:1px solid var(--line);border-radius:8px;background:rgba(16,19,27,.8);font-weight:500;font-size:.9688rem;color:var(--dim)}
-.lamp{display:inline-flex;align-items:center;padding:2px 7px;border-radius:4px;border:1px solid #4a4f5c;color:#7f8696;font:400 1rem/1.1 var(--crt);letter-spacing:.1em}
-.badge.on{color:var(--ink)}
-.badge.on .lamp{background:var(--red);border-color:var(--red);color:#1a0302;box-shadow:0 0 14px rgba(255,91,79,.6)}
-h1{font-size:clamp(3rem,15vw,6.6rem);margin:18px 0 18px;text-shadow:-2px 0 rgba(255,91,79,.5),2px 0 rgba(143,216,255,.6),0 0 34px rgba(143,216,255,.32)}
-h1 .w{display:inline-block}
-h1 small{display:block;font:400 clamp(1.35rem,5vw,2rem)/1 var(--crt);letter-spacing:.14em;text-transform:uppercase;color:var(--glow);margin-top:.5em;text-shadow:0 0 14px rgba(143,216,255,.55)}
-.lead{font-size:1.1875rem;max-width:36ch}
-.lead+.lead{color:var(--dim);font-size:1.0625rem}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 20px}
-.cta .btn{flex:1 1 190px}
-.fine{font-size:.9375rem;color:var(--dim);margin:0}
-.warn{font-size:.9375rem;color:var(--ink);border-left:3px solid var(--red);padding:2px 0 2px 12px;margin:0 0 8px}
+/* ---------- front panel ---------- */
+.bezel{position:absolute;left:calc(32 * var(--u));top:calc(18 * var(--u));width:calc(496 * var(--u));height:calc(374 * var(--u));border-radius:calc(20 * var(--u));background:#0a0a0b;
+  box-shadow:inset 0 0 0 calc(2 * var(--u)) #050505,inset 0 calc(5 * var(--u)) calc(10 * var(--u)) rgba(0,0,0,.9),0 calc(1 * var(--u)) 0 rgba(255,255,255,.08),0 calc(-1 * var(--u)) 0 rgba(0,0,0,.5)}
+.glass{position:absolute;left:calc(12 * var(--u));top:calc(11 * var(--u));right:calc(12 * var(--u));bottom:calc(11 * var(--u));overflow:hidden;border-radius:calc(30 * var(--u)) / calc(34 * var(--u));background:#06080b;isolation:isolate;color:var(--phos)}
+.feed{position:absolute;inset:0;transition:filter .5s}
+.ch{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:calc(30 * var(--u)) calc(34 * var(--u));
+  font:400 calc(26 * var(--u))/1.15 var(--osd);letter-spacing:.06em;text-transform:uppercase;
+  text-shadow:0 0 calc(6 * var(--u)) rgba(var(--glow),.55),calc(1.4 * var(--u)) 0 0 rgba(255,70,60,.28),calc(-1.4 * var(--u)) 0 0 rgba(70,140,255,.32)}
+.ch[hidden]{display:none}
+.ch p{margin:0}
+.ch a{color:#fff;text-decoration:none;pointer-events:none}
+.inspecting .ch a{pointer-events:auto}
+.ch a:focus-visible{outline:calc(2 * var(--u)) solid #fff;outline-offset:calc(4 * var(--u))}
+.osd-t,.osd-b{position:absolute;left:calc(34 * var(--u));right:calc(34 * var(--u));display:flex;justify-content:space-between;font-size:calc(23 * var(--u));letter-spacing:.1em;opacity:.9}
+.osd-t{top:calc(24 * var(--u))}.osd-b{bottom:calc(22 * var(--u))}
+.tv-title{margin:0;font-weight:400}
+.tv-title .t1{display:block;font:400 calc(70 * var(--u))/.95 var(--disp);letter-spacing:-.005em;text-transform:none;color:#f4f6ff;text-shadow:0 0 calc(14 * var(--u)) rgba(var(--glow),.55),calc(1.6 * var(--u)) 0 0 rgba(255,70,60,.3),calc(-1.6 * var(--u)) 0 0 rgba(70,140,255,.35)}
+.tv-title .t2{display:block;margin-top:calc(14 * var(--u));font:400 calc(26 * var(--u))/1 var(--osd);letter-spacing:.42em;padding-left:.42em;opacity:.85}
+.tv-status{margin-top:calc(26 * var(--u))!important;font-size:calc(28 * var(--u));letter-spacing:.12em}
+.tv-status b{font-weight:400;background:var(--phos);color:#06080b;padding:0 .3em;text-shadow:none;margin-right:.4em}
+.off .tv-status b{background:transparent;color:var(--phos);box-shadow:inset 0 0 0 calc(1.5 * var(--u)) var(--phos)}
+.ch h2{margin:0 0 calc(12 * var(--u));font:400 calc(26 * var(--u))/1 var(--osd);letter-spacing:.3em;padding-left:.3em;opacity:.8}
+.ch .big{font-size:calc(58 * var(--u));line-height:1;color:#fff;letter-spacing:.02em}
+.ch .mid{font-size:calc(34 * var(--u));line-height:1.1}
+.ch .sm{font-size:calc(22 * var(--u));opacity:.85;margin-top:calc(14 * var(--u))}
+.ch ul{list-style:none;margin:0;padding:0;columns:2;column-gap:calc(36 * var(--u));text-align:left;font-size:calc(27 * var(--u));line-height:1.18}
+.ch li::before{content:"\25B8  ";opacity:.6}
+.ch .go{display:inline-block;margin-top:calc(18 * var(--u));padding:calc(4 * var(--u)) calc(14 * var(--u));border:calc(1.5 * var(--u)) solid currentColor;font-size:calc(28 * var(--u))}
+.ch-13 .big{font-size:calc(120 * var(--u));opacity:.5}
+.ch-13 .sm{opacity:.35}
+.snow{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.11;mix-blend-mode:screen;pointer-events:none;transition:opacity .25s}
+.glass.burst .snow{opacity:.75;transition:none}
+.glass.burst .ch{opacity:.15}
+.glass.c13 .snow{opacity:.42}
+.vol{position:absolute;left:calc(34 * var(--u));bottom:calc(60 * var(--u));display:flex;gap:calc(10 * var(--u));align-items:center;font:400 calc(24 * var(--u))/1 var(--osd);color:#9dffb0;text-shadow:0 0 calc(6 * var(--u)) rgba(120,255,150,.6);opacity:0;transition:opacity .3s;pointer-events:none}
+.vol.show{opacity:1;transition:none}
+.vol i{display:inline-block;width:calc(7 * var(--u));height:calc(18 * var(--u));background:currentColor;opacity:.18;margin-right:calc(2 * var(--u))}
+.vol i.on{opacity:1}
+.scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.32) 0 1px,transparent 1px 3px)}
+.roll{position:absolute;left:0;right:0;top:-30%;height:28%;pointer-events:none;background:linear-gradient(transparent,rgba(var(--glow),.05),transparent);animation:roll 9s linear infinite}
+@keyframes roll{to{top:110%}}
+.curve{position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:
+   radial-gradient(ellipse 34% 20% at 26% 14%,rgba(255,255,255,.10),transparent 70%),
+   linear-gradient(118deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.02) 26%,transparent 40%),
+   radial-gradient(ellipse 90% 80% at 50% 50%,transparent 55%,rgba(0,0,0,.6) 100%);
+  box-shadow:inset 0 0 calc(40 * var(--u)) calc(6 * var(--u)) rgba(0,0,0,.75)}
+.on-air .curve::before{content:"";position:absolute;left:30%;right:30%;top:-6%;height:18%;background:radial-gradient(ellipse at 50% 0,rgba(216,64,44,.16),transparent 70%)}
+.press{position:absolute;inset:0;pointer-events:none;opacity:0;border-radius:inherit;background:radial-gradient(ellipse 34% 40% at 50% 54%,rgba(255,255,255,.07),rgba(255,255,255,.02) 45%,rgba(0,0,0,.3) 70%,transparent 85%)}
+/* power off */
+.glass .dark{position:absolute;inset:0;background:#040506;opacity:0;pointer-events:none}
+.powered-off .glass .dark{opacity:1;transition:opacity .2s .3s}
+.powered-off .feed{animation:collapse .45s ease-in forwards}
+@keyframes collapse{0%{transform:none;filter:brightness(1)}60%{transform:scale(1,.012);filter:brightness(3)}100%{transform:scale(0,.004);filter:brightness(4)}}
+.powered-off .glass::after{content:"";position:absolute;left:50%;top:50%;width:calc(6 * var(--u));height:calc(6 * var(--u));margin:calc(-3 * var(--u));border-radius:50%;background:#fff;box-shadow:0 0 calc(10 * var(--u)) #cfe0ff;animation:dot 1.4s .4s ease-out forwards;opacity:0}
+@keyframes dot{0%{opacity:1}100%{opacity:0}}
+/* contortion */
+.warping .feed{filter:url(#bulge)}
+/* control strip */
+.strip{position:absolute;left:calc(32 * var(--u));right:calc(32 * var(--u));top:calc(398 * var(--u));height:calc(34 * var(--u));display:flex;align-items:center;gap:calc(14 * var(--u))}
+.badge{font:700 calc(12 * var(--u))/1 var(--ui);font-stretch:125%;letter-spacing:.34em;color:#b9bcc2;text-shadow:0 calc(-1 * var(--u)) 0 rgba(0,0,0,.6);white-space:nowrap}
+.badge small{display:block;margin-top:calc(4 * var(--u));font:500 calc(7 * var(--u))/1 var(--ui);font-stretch:100%;letter-spacing:.3em;color:#6e7076}
+.grille{flex:1;height:calc(18 * var(--u));background:radial-gradient(circle,#050505 calc(1.3 * var(--u)),transparent calc(1.6 * var(--u))) 0 0 / calc(6 * var(--u)) calc(6 * var(--u));opacity:.9}
+.ir{width:calc(20 * var(--u));height:calc(12 * var(--u));border-radius:calc(3 * var(--u));background:linear-gradient(180deg,#2b0d0d,#140505);box-shadow:inset 0 0 0 calc(1 * var(--u)) #000}
+.led{width:calc(6 * var(--u));height:calc(6 * var(--u));border-radius:50%;background:#3fbf6a;box-shadow:0 0 calc(6 * var(--u)) #3fbf6a}
+.powered-off .led{background:#c0392b;box-shadow:0 0 calc(5 * var(--u)) #c0392b}
+.keys{display:flex;gap:calc(5 * var(--u))}
+.key{position:relative;width:calc(30 * var(--u));height:calc(15 * var(--u));padding:0;border:0;border-radius:calc(3 * var(--u));background:linear-gradient(180deg,#3b3d41,#26272a);box-shadow:0 calc(1 * var(--u)) 0 #0a0a0a,inset 0 calc(1 * var(--u)) 0 rgba(255,255,255,.12);cursor:pointer;color:#8f9298}
+.key.pw{width:calc(40 * var(--u));margin-right:calc(8 * var(--u))}
+.key small{position:absolute;left:50%;top:100%;margin-top:calc(3 * var(--u));transform:translateX(-50%);font:600 calc(7 * var(--u))/1 var(--ui);letter-spacing:.14em;white-space:nowrap;pointer-events:none}
+.key:active,.key.down{transform:translateY(calc(1 * var(--u)));box-shadow:inset 0 calc(1 * var(--u)) calc(2 * var(--u)) rgba(0,0,0,.6)}
+.key:focus-visible{outline:calc(2 * var(--u)) solid #fff;outline-offset:calc(2 * var(--u))}
 
-/* the TV */
-.tvw{position:relative;max-width:520px;width:100%;margin:0 auto;perspective:1100px}
-.tvb{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .4s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
-.ears{display:block;width:44%;margin:0 auto -2px;height:auto;color:#5b6272;transform-origin:50% 92%}
-.tv{position:relative;display:flex;flex-direction:column;gap:12px;padding:14px;background:linear-gradient(160deg,#1b1f2a,#11141c 60%,#0c0e14);border:1px solid #2c3242;border-radius:26px;box-shadow:0 30px 60px -20px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.06),0 0 90px var(--tint,rgba(143,216,255,.14));transition:box-shadow .5s}
-.scr{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;border-radius:22px/26px;overflow:hidden;background:#05070b;cursor:pointer;color:#dff4ff;box-shadow:inset 0 0 0 6px #07090d,inset 0 0 50px rgba(0,0,0,.9)}
-.scr::before{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.28) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.65) 100%)}
-.scr::after{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;background:linear-gradient(155deg,rgba(255,255,255,.1),transparent 32%)}
-.scr canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.07;z-index:2;transition:opacity .35s ease-out}
-.scr.surf canvas{opacity:.92;transition:none}
-.hum{position:absolute;left:0;right:0;top:-30%;height:30%;z-index:3;pointer-events:none;background:linear-gradient(to bottom,transparent,rgba(143,216,255,.06),transparent);animation:hum 7s linear infinite}
-@keyframes hum{to{transform:translateY(440%)}}
-.pic{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4%;padding:8%;text-align:center;background:radial-gradient(circle at 50% 45%,hsl(var(--h,205) 60% 18%) 0,hsl(var(--h,205) 50% 9%) 45%,#05070b 80%)}
-.pic svg{width:44%;height:auto;color:#e6f7ff;filter:drop-shadow(0 0 6px hsl(var(--h,205) 90% 75% / .8))}
-.pic .nm{font:800 clamp(1.4rem,6vw,2.2rem)/1 var(--head);font-stretch:78%;text-shadow:0 0 12px hsl(var(--h,205) 90% 75% / .75)}
-.osd{position:absolute;top:7%;right:8%;z-index:2;font:400 clamp(1.3rem,5vw,1.9rem)/1 var(--crt);color:var(--grn);text-shadow:0 0 8px rgba(125,255,158,.8);letter-spacing:.06em}
-.l3{position:absolute;left:5%;right:5%;bottom:6%;z-index:2;padding:6px 8px;background:rgba(0,0,0,.72);border-left:3px solid var(--red);font:500 clamp(.6875rem,2.6vw,.8125rem)/1.35 var(--text);color:#fff;text-align:left}
-.bars{position:absolute;inset:0;display:flex}
-.bars i{flex:1}
-.plate{position:relative;z-index:1;padding:4% 7%;background:#05070b;border:2px solid #e6f7ff;font:800 clamp(1.15rem,5vw,1.75rem)/1.05 var(--head);font-stretch:78%;color:#e6f7ff}
-.plate span{display:block;font:400 clamp(.95rem,3.4vw,1.2rem)/1.15 var(--crt);color:var(--grn);margin-top:6px;letter-spacing:.06em}
-/* the in-between picture while it tunes */
-.tuning{position:absolute;inset:0;z-index:4;display:none;align-items:center;justify-content:center;pointer-events:none}
-.tuning b{font:400 clamp(3rem,15vw,5.6rem)/1 var(--crt);color:var(--grn);letter-spacing:.06em;text-shadow:0 0 14px rgba(125,255,158,.9),3px 0 rgba(255,91,79,.55),-3px 0 rgba(143,216,255,.55)}
-.tuning i{position:absolute;left:0;right:0;height:9%;background:rgba(255,255,255,.55);mix-blend-mode:overlay}
-.scr.surf .tuning{display:flex}
-.scr.surf .pic{filter:brightness(1.6) contrast(1.4) saturate(.2)}
-.scr.lock .pic{animation:lock .38s ease-out}
-@keyframes lock{0%{filter:brightness(2.4) contrast(1.6);transform:scaleY(1.04) skewX(-3deg)}35%{filter:brightness(.8);transform:scaleY(.98) skewX(1deg)}100%{filter:none;transform:none}}
-.ctl{display:flex;align-items:center;gap:10px}
-.ctl .chb{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:0 14px;border-radius:10px;border:1px solid #363d4f;background:linear-gradient(#232836,#171b25);color:var(--ink);font:400 1.2rem/1 var(--crt);letter-spacing:.06em;cursor:pointer}
-.ctl .chb:hover{border-color:var(--glow);color:var(--glow)}
-.ctl .chb:active{transform:translateY(1px)}
-/* the little channel bars under the screen: one per channel, the tuned one lights up */
-.leds{flex:1;display:flex;align-items:flex-end;gap:4px;height:34px;padding:5px 7px;border-radius:7px;background:#07090d;box-shadow:inset 0 0 0 1px #1b2029,inset 0 6px 12px rgba(0,0,0,.6)}
-.leds i{flex:1;height:30%;border-radius:2px;background:#1a2030;transition:height .18s ease-out,background-color .25s,box-shadow .25s}
-.leds i.on{height:100%;background:hsl(var(--h) 95% 66%);box-shadow:0 0 10px hsl(var(--h) 95% 66% / .85),0 0 2px #fff inset}
-.leds i.near{height:50%;background:hsl(var(--h) 60% 34%)}
-.leds.idle i{animation:kitt 1.8s ease-in-out infinite}
-@keyframes kitt{0%,100%{height:30%;background:#1a2030;box-shadow:none}10%{height:85%;background:#ff7a6e;box-shadow:0 0 10px rgba(255,91,79,.7)}}
-.pwr{width:9px;height:9px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn);margin:0 4px}
-.pwr.blink{animation:pblink .5s steps(2) 1}
-@keyframes pblink{50%{background:#ffb347;box-shadow:0 0 12px #ffb347}}
-.hint{margin:12px 0 0;text-align:center;font-size:.9375rem;color:var(--dim)}
-@media (prefers-reduced-motion:no-preference){
- .ears{animation:sway 5s ease-in-out infinite}
- .tvw.jolt .ears{animation:wob .55s ease-out}
- .tvw.jolt .tv{animation:jolt .3s ease-out}
- .pic .nm,.pic svg{animation:pop .35s cubic-bezier(.2,1.6,.4,1)}
- .pwr{animation:led 2.4s ease-in-out infinite}
- .scr.surf .pic{animation:roll .14s linear infinite}
- .scr.surf .tuning i{animation:tear .23s linear infinite}
- .scr.surf .tuning b{animation:jit .09s steps(2) infinite}
- .roller{animation:hum 11s linear infinite}
- h1 small{animation:flick 6s linear infinite}
-}
-@keyframes sway{50%{transform:rotate(1.5deg)}}
-@keyframes wob{20%{transform:rotate(-7deg)}45%{transform:rotate(5deg)}70%{transform:rotate(-2deg)}}
-@keyframes jolt{30%{transform:translateY(2px) rotate(-.4deg)}60%{transform:translateY(-1px) rotate(.3deg)}}
-@keyframes pop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
-@keyframes led{50%{opacity:.45}}
-@keyframes roll{0%{transform:translateY(0)}100%{transform:translateY(-22%)}}
-@keyframes tear{0%{top:-10%}100%{top:105%}}
-@keyframes jit{50%{transform:translate(2px,-1px)}}
-@keyframes flick{0%,91%,93%,97%,100%{opacity:1}92%,96%{opacity:.35}}
+/* the big invisible button that picks the set up */
+.pick{position:absolute;left:50%;top:0;width:calc(600 * var(--u));height:100%;transform:translateX(-50%);border:0;padding:0;background:transparent;cursor:zoom-in;z-index:3;border-radius:calc(10 * var(--u))}
+.pick:focus-visible{outline:2px dashed var(--ink);outline-offset:6px}
+.js .inspecting .pick{display:none}
+.pick{display:none}.js .pick{display:block}
 
+/* ---------- inspect mode ---------- */
+.inspect-bg{position:fixed;inset:0;z-index:60;background:radial-gradient(ellipse at 50% 42%,#101217,#030304 70%);opacity:0;visibility:hidden;transition:opacity .5s,visibility 0s .5s}
+.is-inspecting .inspect-bg{opacity:1;visibility:visible;transition:opacity .5s}
+.is-inspecting .tvwrap{z-index:61}
+.inspecting .sway{animation:none}
+.inspecting .floor{opacity:0}
+.inspecting .stage{cursor:grab;touch-action:none;--po:50% 30%}
+.dragging .stage{cursor:grabbing}
+.ihud{position:fixed;z-index:62;left:0;right:0;pointer-events:none;opacity:0;transition:opacity .4s}
+.is-inspecting .ihud{opacity:1;transition:opacity .5s .35s}
+.ihud *{pointer-events:auto}
+.ihud.tophud{top:0;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;gap:16px}
+.ihud .hint{font:400 19px/1.2 var(--osd);letter-spacing:.12em;color:var(--dim);text-transform:uppercase}
+.ihud .x{min-height:44px;white-space:nowrap}
+.js .inspecting .hint-inspect{visibility:hidden}
+.ihud.remote{bottom:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px max(18px,env(safe-area-inset-bottom))}
+.ihud[hidden]{display:none}
+.tune{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:760px}
+.tune button{min-height:44px;min-width:44px;padding:0 14px;border:1px solid #3a3a37;background:rgba(10,10,11,.7);color:var(--ink);font:400 20px/1 var(--osd);letter-spacing:.08em;border-radius:2px;cursor:pointer}
+.tune button b{font-weight:400;color:var(--dim);margin-right:.5em}
+.tune button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#0b0b0a}
+.tune button[aria-pressed="true"] b{color:#55554f}
+.tune button:hover{border-color:var(--ink)}
 
-/* sections tune in like channels */
-section{position:relative;padding:72px 0;border-top:1px solid var(--line);overflow:hidden}
-.ident{display:inline-block;padding:3px 8px 2px;margin:0 0 12px;background:rgba(0,0,0,.55);border:1px solid rgba(125,255,158,.25);font:400 1.3rem/1 var(--crt);letter-spacing:.08em;color:var(--grn);text-shadow:0 0 8px rgba(125,255,158,.55)}
-section>.flash{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.08) 0 2px,transparent 2px 4px)}
-@media (prefers-reduced-motion:no-preference){
- .tuned>.flash{animation:sflash .6s ease-out 1}
- .tuned h2{animation:glitch .5s steps(1) 1}
-}
-@keyframes sflash{0%{opacity:.9;background-position:0 0}40%{opacity:.5;background-position:0 40px}100%{opacity:0}}
-@keyframes glitch{0%{clip-path:inset(0 0 60% 0);transform:translateX(-6px);text-shadow:4px 0 var(--red),-4px 0 var(--glow)}20%{clip-path:inset(40% 0 20% 0);transform:translateX(5px)}40%{clip-path:inset(10% 0 50% 0);transform:translateX(-3px)}60%{clip-path:none;transform:none;text-shadow:2px 0 var(--red),-2px 0 var(--glow)}100%{clip-path:none;transform:none}}
-.intro{color:var(--dim);max-width:56ch;margin-bottom:30px}
+/* ---------- the listing under the set ---------- */
+.listing{margin-top:calc(46 * var(--u));display:grid;grid-template-columns:auto 1fr auto;gap:18px 40px;align-items:center;padding:22px 0 0;border-top:1px solid var(--rule)}
+.listing p{margin:0}
+.listing .when{font:400 22px/1 var(--osd);letter-spacing:.1em;color:var(--dim);text-transform:uppercase;white-space:nowrap}
+.listing .when b{display:block;font-weight:400;color:var(--ink);font-size:30px;margin-top:6px;font-variant-numeric:tabular-nums}
+.listing .what{font:400 19px/1.45 var(--text);color:#cfcbbf;max-width:52ch}
+.listing .what strong{font:400 26px/1.15 var(--disp);color:var(--ink);display:block;margin-bottom:4px}
+.listing .acts{display:flex;gap:10px;flex-wrap:wrap}
+.listing .warn{grid-column:1/-1;margin:0;padding-top:14px;border-top:1px solid var(--rule)}
+.hint-inspect{display:block;text-align:center;margin-top:calc(40 * var(--u));font:400 17px/1 var(--osd);letter-spacing:.16em;text-transform:uppercase;color:#85837a}
+.hint-inspect{visibility:hidden}.js .hint-inspect{visibility:visible}
 
-/* product tiles: little screens */
-.guide{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:12px}
-.tile{position:relative;display:flex;align-items:center;gap:16px;width:100%;min-height:84px;padding:12px 16px 12px 12px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,rgba(22,26,36,.9),rgba(12,14,20,.9));color:var(--ink);font:inherit;text-align:left;cursor:pointer;overflow:hidden;transition:border-color .2s}
-.tile:hover{border-color:hsl(var(--h) 70% 60% / .65)}
-.tile .ic{position:relative;flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:12px/14px;background:radial-gradient(circle at 50% 40%,hsl(var(--h) 55% 18%),#0a1520 75%);box-shadow:inset 0 0 0 1px hsl(var(--h) 40% 26%);overflow:hidden}
-.tile .ic::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.35) 0 1px,transparent 1px 3px)}
-.tile svg{width:38px;height:38px;color:#dff4ff;filter:drop-shadow(0 0 5px hsl(var(--h) 90% 70% / .6))}
-.tile .tn{display:block;font:600 1.125rem/1.3 var(--text)}
-.tile small{display:block;margin-top:3px;font:400 1.05rem/1 var(--crt);letter-spacing:.06em;color:#6c7488}
-.tile:hover small{color:hsl(var(--h) 90% 75%)}
-@media (prefers-reduced-motion:no-preference){
- .tile:hover .ic{animation:acquire .45s steps(4) 1}
- .tuned .tile .ic{animation:acquire .9s steps(6) 1 both;animation-delay:var(--d,0s)}
-}
-@keyframes acquire{0%{filter:brightness(3) contrast(3) blur(2px)}60%{filter:brightness(1.6) blur(.5px)}100%{filter:none}}
-.nic{margin:22px 0 0;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--red);border-radius:8px;background:rgba(16,19,27,.85)}
-.nic p{margin:0}
-.nic p+p{margin-top:4px;color:var(--dim);font-size:.9375rem}
+/* ---------- sections ---------- */
+section.s{padding:120px 0;border-top:1px solid var(--rule);position:relative}
+.s h2{margin:14px 0 0;font:400 clamp(44px,6vw,80px)/.98 var(--disp);letter-spacing:-.01em}
+.s .lede{margin:22px 0 0;max-width:38ch;color:#c4c0b4;font-size:19px}
 
-/* hours: tonight's broadcast */
-.hours{display:grid;gap:32px}
-.big{font:800 clamp(1.7rem,6vw,2.4rem)/1.05 var(--head);font-stretch:78%;margin:0 0 12px}
-.onair{margin:20px 0 22px;padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(10,12,18,.85)}
-.onair .clk{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font:400 1.35rem/1 var(--crt);letter-spacing:.06em;color:var(--dim)}
-.onair .clk b{font-weight:400;font-size:2.4rem;color:var(--ink);text-shadow:0 0 12px rgba(143,216,255,.45)}
-.prog{position:relative;height:10px;margin:14px 0 8px;border-radius:5px;background:#151a25;overflow:hidden}
-.prog i{position:absolute;inset:0 auto 0 0;width:0;border-radius:5px;background:var(--red);box-shadow:0 0 12px rgba(255,91,79,.55);transition:width .8s ease-out}
-.prog i::after{content:"";position:absolute;right:0;top:-3px;bottom:-3px;width:3px;background:#fff;box-shadow:0 0 10px #fff}
-.ticks{display:flex;justify-content:space-between;font:400 1rem/1 var(--crt);color:#5d6578;letter-spacing:.05em}
-.onair p{margin:10px 0 0;font-size:.9688rem;color:var(--ink)}
-table{width:100%;border-collapse:collapse}
-caption{text-align:left;color:var(--dim);font-size:.9375rem;padding:0 0 10px}
-th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);font-weight:400}
-thead th{font-weight:600;font-size:.9375rem;color:var(--dim)}
-tbody th{font-weight:500}
-tbody tr{transition:background-color .2s}
-tbody tr:hover{background:rgba(143,216,255,.05)}
-tr.today{background:var(--glow2);box-shadow:inset 3px 0 0 var(--glow)}
-tr.today th,tr.today td{color:#fff;font-weight:600}
-.tag{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:5px;background:var(--glow);color:#051019;font:400 .95rem/1 var(--crt);letter-spacing:.08em;text-transform:uppercase;vertical-align:1px}
-.tag:empty{display:none}
+/* listings / what we carry */
+.carry{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:60px;align-items:start}
+.carry .side{position:sticky;top:40px}
+.carry .side .warn{margin-top:30px;padding-top:16px;border-top:1px solid var(--rule);max-width:44ch}
+.guide{list-style:none;margin:0;padding:0;border-top:1px solid #2a2a27}
+.guide li{display:grid;grid-template-columns:64px 1fr auto;align-items:baseline;gap:18px;padding:17px 0 15px;border-bottom:1px solid var(--rule)}
+.guide .no{font:600 13px/1 var(--ui);font-stretch:87.5%;letter-spacing:.16em;color:var(--red);font-variant-numeric:tabular-nums}
+.guide .nm{font:400 clamp(26px,3.1vw,38px)/1.05 var(--disp)}
+.guide .tg{font:600 11px/1 var(--ui);font-stretch:87.5%;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.guide li.ghost{padding:5px 0 4px;border-bottom-color:#141513}
+.guide li.ghost .no{color:#3a3a36}
+.guide li.ghost .nm{height:1px;align-self:center;background:linear-gradient(90deg,#2a2a27,transparent)}
+
+/* hours */
+.hours-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:70px;align-items:center}
+.span{font:400 clamp(58px,7vw,100px)/.9 var(--disp);letter-spacing:-.02em;margin:26px 0 8px;font-variant-numeric:lining-nums}
+.span em{font-style:normal;color:var(--faint);font-size:.55em;vertical-align:.32em;margin:0 .14em}
+.now{margin:18px 0 0;font:400 22px/1.3 var(--osd);letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.now b{font-weight:400;color:var(--ink)}
+.clockbox{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center}
+.clock{width:clamp(170px,19vw,240px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 42% 36%,#17181a,#0a0a0b 70%);box-shadow:0 0 0 1px #2a2a27,0 0 0 9px #111214,0 0 0 10px #2a2a27,0 30px 50px rgba(0,0,0,.7),inset 0 0 30px rgba(0,0,0,.9)}
+.clock svg{width:100%;height:100%;display:block}
+table.week{width:100%;border-collapse:collapse;font:400 17px/1.2 var(--ui);font-stretch:93%;font-variant-numeric:tabular-nums lining-nums}
+.week th,.week td{padding:11px 0;border-bottom:1px solid var(--rule);text-align:left;font-weight:400;color:var(--dim)}
+.week td{text-align:right}
+.week tr.today th,.week tr.today td{color:var(--ink)}
+.week th{position:relative}.week tr.today th::before{content:"\25B8";position:absolute;left:-18px;top:12px;color:var(--red)}
+.week .sub{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+.hours-note{margin:22px 0 0;color:var(--dim);font-size:16px;max-width:44ch}
 
 /* visit */
-.visit{display:grid;gap:32px}
-address{font-style:normal;font-size:1.25rem;line-height:1.5;margin-bottom:20px}
-address strong{font-weight:600}
-.facts{list-style:none;margin:24px 0 0;padding:0}
-.facts li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
-.facts svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--glow)}
-.map{position:relative;border-radius:22px;overflow:hidden;border:10px solid #141822;outline:1px solid #2c3242;background:var(--panel);height:min(75vw,460px);min-height:280px;box-shadow:0 30px 60px -24px rgba(0,0,0,.8),0 0 70px rgba(143,216,255,.1)}
-.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(1.05) brightness(.9);transition:filter .4s}
-.map:hover iframe{filter:grayscale(.3) contrast(1.05)}
-.map::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.18) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.5) 100%)}
-.map .tag2{position:absolute;left:12px;top:12px;z-index:1;pointer-events:none;padding:4px 8px;background:rgba(0,0,0,.75);font:400 1.15rem/1 var(--crt);letter-spacing:.08em;color:var(--grn);text-shadow:0 0 8px rgba(125,255,158,.6)}
-.map .tag2::before{content:"\25CF  ";color:var(--red)}
+.visit-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:70px;align-items:center}
+.addr{margin:24px 0 26px;font:400 clamp(32px,4.4vw,56px)/1.06 var(--disp);font-style:normal}
+.addr span{display:block;color:var(--dim)}
+.visit-g .acts{display:flex;flex-wrap:wrap;gap:10px}
+.facts{list-style:none;margin:34px 0 0;padding:0;border-top:1px solid var(--rule)}
+.facts li{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule);color:#cfcbbf;font-size:17px}
+.facts li::before{content:attr(data-k);flex:none;width:30px;font:600 11px/1 var(--ui);letter-spacing:.16em;color:var(--faint)}
+.window{position:relative;aspect-ratio:4/5;max-width:420px;margin-inline:auto;width:100%;background:#050607;border:10px solid #141516;outline:1px solid #26272a;box-shadow:0 40px 70px rgba(0,0,0,.6);overflow:hidden}
+.window::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(30,31,33,.92) 0 9px,rgba(8,8,9,.6) 9px 11px,transparent 11px 22px) 0 0 / 100% 46% no-repeat;z-index:2}
+.window::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(125deg,rgba(255,255,255,.07),transparent 35%),linear-gradient(180deg,transparent 60%,rgba(0,0,0,.5))}
+.neon{position:absolute;left:0;right:0;top:52%;text-align:center;font:600 clamp(54px,7vw,92px)/1 var(--ui);font-stretch:70%;letter-spacing:.12em;padding-left:.12em;color:#3a2420;-webkit-text-stroke:1px #4a2c27;transition:color 1s,text-shadow 1s}
+.neon-on .neon{color:#ffd9cf;-webkit-text-stroke:1px #ff7a5c;text-shadow:0 0 4px #ff5a3c,0 0 16px #e0412a,0 0 42px rgba(216,64,44,.7)}
+.neon-on .neon .e{animation:dead 13s 4s steps(1) infinite}
+@keyframes dead{0%,91%{opacity:1}92%{opacity:.3}95%{opacity:1}97%{opacity:.3}99%,100%{opacity:1}}
+.window .slat{position:absolute;z-index:3;left:38%;width:30%;top:24.6%;height:7px;background:#232427;transform:rotate(-3deg);transform-origin:0 50%;box-shadow:0 3px 0 rgba(0,0,0,.8)}
+.window .glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 30% at 50% 58%,rgba(216,64,44,.0),transparent);transition:background 1s}
+.neon-on .window .slat{position:absolute;z-index:3;left:38%;width:30%;top:24.6%;height:7px;background:#232427;transform:rotate(-3deg);transform-origin:0 50%;box-shadow:0 3px 0 rgba(0,0,0,.8)}
+.window .glow{background:radial-gradient(ellipse 60% 30% at 50% 58%,rgba(216,64,44,.22),transparent)}
+.window .plate{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);z-index:4;font:600 12px/1 var(--ui);letter-spacing:.3em;color:#7d7b73;padding:8px 12px;border:1px solid #2a2a27;background:#0b0b0c;white-space:nowrap}
 
-/* the on-screen channel bug that follows you down the page */
-.bug{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #2c3242;border-radius:9px;background:rgba(5,6,10,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font:400 1.2rem/1 var(--crt);letter-spacing:.07em;color:var(--grn);text-shadow:0 0 8px rgba(125,255,158,.6);pointer-events:none;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
-.bug.show{opacity:1;transform:none}
-.bug span{color:#c7cfdd;text-shadow:none}
-.bug.chg{animation:jit .08s steps(2) 4}
+/* sign-off */
+.signoff{position:relative;border-top:1px solid var(--rule);padding:0 0 46px;overflow:hidden}
+.bars{display:grid;grid-template-columns:repeat(7,1fr);height:clamp(48px,7vw,84px);opacity:.32;filter:saturate(.7) brightness(.8)}
+.bars i:nth-child(1){background:#c0c0c0}.bars i:nth-child(2){background:#c0c000}.bars i:nth-child(3){background:#00c0c0}.bars i:nth-child(4){background:#00c000}.bars i:nth-child(5){background:#c000c0}.bars i:nth-child(6){background:#c00000}.bars i:nth-child(7){background:#0000c0}
+.bars2{display:grid;grid-template-columns:repeat(7,1fr);height:10px;opacity:.3;filter:saturate(.7) brightness(.8)}
+.bars2 i:nth-child(odd){background:#111}.bars2 i:nth-child(1){background:#0000c0}.bars2 i:nth-child(3){background:#c000c0}.bars2 i:nth-child(5){background:#00c0c0}.bars2 i:nth-child(7){background:#c0c0c0}
+.signoff .wrap{padding-top:80px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:50px;align-items:end}
+.signoff h2{margin:14px 0 26px;font:400 clamp(40px,5.4vw,74px)/1 var(--disp);letter-spacing:-.01em}
+.signoff .acts{display:flex;gap:10px;flex-wrap:wrap}
+.foot{color:var(--dim);font-size:15px;line-height:1.6}
+.foot p{margin:0 0 14px}
+.foot .adolla{font:400 13px/1.55 var(--ui);font-stretch:93%;color:#8a887f}
+.foot .adolla a{color:inherit}
+.foot .sets{font-style:italic;color:#8a887f}
 
-footer{position:relative;z-index:1;border-top:1px solid var(--line);background:#05060a;padding:0 0 36px;color:var(--dim);font-size:.9375rem}
-.fbars{display:block;width:100%;height:28px;margin-bottom:40px;image-rendering:pixelated;background:#111}
-.signoff{margin:0 0 30px;font:400 clamp(1.5rem,5vw,2.1rem)/1.1 var(--crt);letter-spacing:.08em;color:var(--ink);text-shadow:0 0 12px rgba(143,216,255,.35)}
-.signoff span{display:block;font-size:.65em;color:var(--grn)}
-footer .cols{display:grid;gap:24px;margin-bottom:28px}
-footer h2{font:600 1rem/1.3 var(--text);color:var(--ink);margin:0 0 8px;text-shadow:none}
-footer p{margin:0}
-footer strong{color:var(--ink);font-weight:500}
-.credit{border-top:1px solid var(--line);padding-top:18px;font-size:.8125rem}
+/* ---------- age gate ---------- */
+.gate{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px 16px;background:radial-gradient(ellipse at 50% 40%,#0f1216,#030304 70%)}
+.gate[hidden]{display:none}
+.gate .card{width:min(520px,100%);text-align:center}
+.gate .osd{font:400 22px/1 var(--osd);letter-spacing:.16em;color:var(--phos);text-shadow:0 0 8px rgba(var(--glow),.5);text-transform:uppercase}
+.gate h2{margin:22px 0 14px;font:400 clamp(42px,9vw,64px)/1 var(--disp)}
+.gate p{color:var(--dim);margin:0 auto;max-width:34ch}
+.gate .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.gate .tiny{font:400 13px/1.5 var(--ui);margin-top:20px;color:#8a887f}
+.locked main,.locked .top,.locked footer{visibility:hidden}
 
-/* age gate */
-#gate{display:none}
-.js #gate{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:16px;background:#000;transform-origin:50% 50%}
-.js.v #gate{display:none}
-#gate[hidden]{display:none!important}
-#gnz{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:.5}
-#gate::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.35) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.8) 100%)}
-.gp{position:relative;z-index:1;width:100%;max-width:440px;padding:0 0 24px;background:#07080c;border:1px solid #2c3242;border-radius:18px;overflow:hidden;text-align:center;box-shadow:0 0 0 1px #000,0 0 80px rgba(143,216,255,.18);transition:opacity .15s}
-.gbars{display:flex;height:34px;margin-bottom:22px}
-.gbars i{flex:1}
-.gp .sb{margin:0 0 6px;color:var(--grn);font:400 1.35rem/1 var(--crt);letter-spacing:.1em;text-transform:uppercase;text-shadow:0 0 8px rgba(125,255,158,.5)}
-.gp h2{font-size:clamp(1.9rem,8vw,2.6rem);margin:0 20px 12px}
-.gp p{padding:0 22px}
-.gbtns{display:grid;gap:10px;padding:0 22px;margin:20px 0 14px}
-.gp .fine{font-size:.875rem}
-#gate.flare #gnz{opacity:1}
-#gate.flare .gp{opacity:0}
-#gate.off{animation:off .5s cubic-bezier(.6,0,.9,.5) forwards}
-@keyframes off{0%{transform:none}55%{transform:scale(1,.006)}100%{transform:scale(0,.006);opacity:.2}}
-.powered .room{animation:pon .9s ease-out 1}
-@keyframes pon{0%{opacity:0}30%{opacity:1}45%{opacity:.4}100%{opacity:.75}}
+/* reveal (only when JS runs) */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
+.js .rv.in{opacity:1;transform:none}
 
-@media (min-width:430px){.brand .nm{display:inline}}
-@media (min-width:600px){.guide{grid-template-columns:1fr 1fr}.cta .btn{flex:0 1 auto}footer .cols{grid-template-columns:repeat(3,1fr)}.gbtns{grid-template-columns:1fr 1fr}}
-@media (min-width:760px){.nav .call{display:inline-flex;margin-left:8px;min-height:44px;padding:0 16px;font-size:.9688rem;color:#051019}.nav .call:hover{background:#c4ecff;color:#051019}}
-@media (min-width:960px){.hero{padding:56px 0 80px}.hgrid{grid-template-columns:1.05fr .95fr;gap:56px}.guide{grid-template-columns:repeat(3,1fr);gap:14px}section{padding:100px 0}.hours{grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}.visit{grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}.nav a{padding:0 14px}}
-@media (max-width:599px){.nav a b{display:none}}
-@media (max-width:429px){.brand .nm{display:none}.nav a{padding:0 9px;font-size:.9375rem}.bug{right:10px;bottom:10px;font-size:1.05rem}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (max-width:980px){
+  .carry,.hours-g,.visit-g,.signoff .wrap{grid-template-columns:1fr}
+  .carry .side{position:static}
+  .hours-g{gap:50px}
+}
+@media (max-width:760px){
+  :root{--u:min(1px, calc((100vw - 24px) / 600)); --ry:-24deg; --rx:-9deg}
+  .top nav{display:none}
+  .room{padding:18px 0 26px}
+  .listing{grid-template-columns:1fr;gap:16px;padding-top:18px}
+  .listing .when{display:flex;align-items:baseline;gap:14px;font-size:19px}
+  .tvwrap{left:-6%}
+  .stage{perspective-origin:80% -10%}
+  .listing .when b{font-size:25px;margin:0}
+  .listing .what{font-size:17px}
+  .listing .what strong{font-size:23px}
+  .listing .acts{display:grid;grid-template-columns:1fr}
+  .listing .acts .btn{min-height:54px}
+  section.s{padding:84px 0}
+  .guide li{grid-template-columns:48px 1fr;gap:12px}
+  .guide .tg{display:none}
+  .clockbox{grid-template-columns:1fr;gap:34px}
+  .clock{margin-inline:auto}
+  .ihud .hint{font-size:17px}
+  .ihud .kb{display:none}
+  .tune button{padding:0 10px;font-size:18px}
+  .tune button b{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+  .roll{display:none}
+}
 </style>
 </head>
 <body>
-<noscript><p class="nojs">This site is for adults 21+.</p></noscript>
+<script>document.documentElement.className='js';(function(){var ok=false;try{var t=+localStorage.getItem('tz-21-v3');ok=!!t&&Date.now()-t<2592e6}catch(e){}if(!ok)document.body.className='locked'})()</script>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="sky" aria-hidden="true"></div>
-<div class="crt" aria-hidden="true"></div>
-<div class="roller" aria-hidden="true"></div>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
- <defs>
-  <symbol id="i-glass" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M25 5h14M28 5v27M36 5v27"/><path d="M28 32 17.5 53q-1.2 4.5 3 4.5h23q4.2 0 3-4.5L36 32"/><path d="M21.5 47.5c3-1.6 5-1.6 7 0s4.5 1.6 7 0 5-1.6 7.5 0"/><path d="M28.5 50 14 36"/><path d="M8 31h11l-2.8 5.2h-5.4z"/><path d="M28 17l2.4 1.8M36 17l-2.4 1.8"/></g></symbol>
-  <symbol id="i-papers" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-5 30 45)"><rect x="7" y="34" width="46" height="22" rx="1.5"/><path d="M10 39.5h40" stroke-dasharray="2.5 3"/></g><g transform="rotate(-20 34 16)"><path d="M12 13.5 47 10.5c5 1 5 10 0 11L12 18.5z"/><path d="M17 13v6"/><path d="M51.5 16c2-2.5 4-2.5 5.5 0s3.5 2.5 5 0"/></g></g></symbol>
-  <symbol id="i-hookah" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M25 7h14l-3.2 7h-7.6z"/><path d="M29.5 14v24M34.5 14v24"/><ellipse cx="32" cy="19.5" rx="11" ry="2.2"/><path d="M27 38c-10 3.5-11 17-2.5 20.5h15C48 55 47 41.5 37 38z"/><path d="M34.5 30c9-1.2 15 3.5 15.5 11 .4 6 3 9.5 9 9.5"/><path d="M20 58.5h24"/></g></symbol>
-  <symbol id="i-eliquid" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M30.5 4h3l1.5 6h-6z"/><rect x="25" y="10" width="14" height="10" rx="1.5"/><path d="M29 10v10M35 10v10"/><path d="M27 20v2.5c-6 1.5-7 4-7 7V55q0 3 3 3h18q3 0 3-3V29.5c0-3.5-1-5.5-7-7V20"/><path d="M20 34h24M20 48h24"/><path d="M53 33s-4.5 5.5-4.5 8.4a4.5 4.5 0 0 0 9 0C57.5 38.5 53 33 53 33z"/></g></symbol>
-  <symbol id="i-vape" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M26.5 17 28 6.5Q28.4 4 31 4h2q2.6 0 3 2.5L37.5 17"/><path d="M30.5 8h3"/><rect x="22" y="17" width="20" height="43" rx="3.5"/><path d="M22 23h20"/><path d="M29 54h6"/></g><circle cx="32" cy="46" r="2.4" fill="currentColor"/></symbol>
-  <symbol id="i-cigar" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-28 32 32)"><path d="M13 26.5h37.5a5.5 5.5 0 0 1 0 11H13z"/><path d="M13 26.5H8.5l1.2 2.2-1.6 2.4 1.6 2.3-1.6 2.3 1.2 1.8H13"/><path d="M40 26.5v11M45.5 26.5v11"/></g><path d="M9 38c-3.5-4.5 3-7.5 0-12.5s2.5-8 0-12.5"/></g></symbol>
-  <symbol id="i-pipe" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 25h17v13.5Q26 49 17.5 49T9 38.5z"/><path d="M11.5 25c1.3-2 2.7-2 4 0s2.7 2 4 0 2.7-2 4 0"/><path d="M26 41c11 0 19-4.5 30-14M26 34.5c9.5 0 15-3 25.5-11.5"/><path d="M51.5 23l4.5 4M54 25.5l5-4.5"/><path d="M17 20c-3-4 3-6 0-10s2.5-6 0-9"/></g></symbol>
-  <symbol id="i-pouch" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="25" cy="20" rx="19" ry="7.5"/><ellipse cx="25" cy="20" rx="8.5" ry="3.2"/><path d="M6 20v12c0 4.1 8.5 7.5 19 7.5S44 36.1 44 32V20"/><path d="M6 25c0 4.1 8.5 7.5 19 7.5S44 29.1 44 25"/><rect x="38" y="42" width="20" height="11" rx="3" transform="rotate(-14 48 47.5)"/><rect x="20" y="47" width="20" height="11" rx="3" transform="rotate(8 30 52.5)"/></g></symbol>
-  <symbol id="i-lighter" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5c-3.5-2.5-2-6.5 1-9.5.2 3 3.8 4.2 2.8 7.8-.6 1.9-2.3 2.6-3.8 1.7z"/><path d="M14 22v-7.5h14V22"/><circle cx="19.5" cy="18" r="2.6"/><rect x="11" y="22" width="20" height="36" rx="5"/><path d="M34 50h26l-3.5 8h-19z"/><path d="M41 49.5 58 42"/></g></symbol>
-  <symbol id="i-tv" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l10 11 10-11"/><rect x="6" y="17" width="52" height="40" rx="7"/></g><rect x="12" y="23" width="34" height="28" rx="5" fill="currentColor" opacity=".9"/><circle cx="52" cy="29" r="2.4" fill="currentColor"/><circle cx="52" cy="38" r="2.4" fill="currentColor"/></symbol>
- </defs>
+  <filter id="bulge" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+    <feImage id="bulgeMap" x="0" y="0" width="100" height="100" preserveAspectRatio="none" result="map"/>
+    <feDisplacementMap id="bulgeDisp" in="SourceGraphic" in2="map" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
 </svg>
 
-<header class="top">
- <div class="wrap bar">
-  <a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true" style="color:var(--glow)"><use href="#i-tv"/></svg><span class="nm">Twilight Zone</span><span class="sr"> Smoke Shop, back to top</span></a>
-  <nav aria-label="Main">
-   <ul class="nav">
-    <li><a href="#carry" data-sec="carry"><b aria-hidden="true">02</b>Products</a></li>
-    <li><a href="#hours" data-sec="hours"><b aria-hidden="true">03</b>Hours</a></li>
-    <li><a href="#visit" data-sec="visit"><b aria-hidden="true">04</b>Visit</a></li>
-    <li><a class="btn p call" href="tel:+14802844397">Call</a></li>
-   </ul>
-  </nav>
- </div>
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gt" aria-describedby="gd" hidden>
+  <div class="card" id="gcard">
+    <div class="osd" aria-hidden="true">CH 03 &nbsp;&middot;&nbsp; Channel locked</div>
+    <h2 id="gt">Are you 21 or older?</h2>
+    <p id="gd">This site is for adults. We check ID at the counter, every time.</p>
+    <div class="btns">
+      <button class="btn solid" id="yes" type="button">Yes, I’m 21+</button>
+      <button class="btn" id="no" type="button">No, I’m under 21</button>
+    </div>
+    <p class="tiny">We’ll remember your answer on this device for 30 days.</p>
+  </div>
+</div>
+
+<div class="top"><div class="wrap">
+  <span class="mark" aria-hidden="true">CH 03</span>
+  <nav aria-label="Sections"><a href="#carry">What we carry</a><a href="#hours">Hours</a><a href="#visit">Visit</a></nav>
+  <a class="call" href="tel:+14802844397"><span class="sr">Call </span>(480) 284-4397</a>
+</div></div>
+
+<main id="main">
+<header class="room" id="top">
+  <div class="wrap">
+    <div class="tvwrap" id="tvwrap">
+      <div class="stage" id="stage">
+        <div class="sway"><div class="tv" id="tv">
+          <i class="floor" aria-hidden="true"></i>
+          <i class="t-k" aria-hidden="true"></i><i class="t-t" aria-hidden="true"></i><i class="t-b" aria-hidden="true"></i><i class="t-l" aria-hidden="true"></i><i class="t-r" aria-hidden="true"></i>
+          <i class="f-t" aria-hidden="true"></i><i class="f-b" aria-hidden="true"></i><i class="f-l" aria-hidden="true"></i><i class="f-r" aria-hidden="true"></i>
+          <i class="l-t" aria-hidden="true"></i><i class="l-l" aria-hidden="true"></i><i class="l-r" aria-hidden="true"></i>
+          <div class="l-f" aria-hidden="true"><span id="lampTxt">ON AIR</span></div>
+          <div class="f-front">
+            <div class="bezel">
+              <div class="glass" id="glass">
+                <div class="feed" id="feed">
+                  <div class="ch ch-3" data-ch="3">
+                    <div class="osd-t" aria-hidden="true"><span>CH 03</span><span class="azclock">&nbsp;</span></div>
+                    <h1 class="tv-title"><span class="t1">Twilight Zone</span><span class="t2">Smoke Shop</span></h1>
+                    <p class="tv-status" id="tvStatus"><b>DAILY</b>11 AM&ndash;2 AM</p>
+                    <div class="osd-b" aria-hidden="true"><span>TEMPE AZ</span><span>(480) 284-4397</span></div>
+                  </div>
+                  <div class="ch" data-ch="4" hidden aria-hidden="true">
+                    <div class="osd-t"><span>CH 04</span><span class="azclock">&nbsp;</span></div>
+                    <h2>Hours</h2>
+                    <p class="big">11 AM&ndash;2 AM</p>
+                    <p class="mid">Every day</p>
+                    <p class="sm">Arizona time &middot; Fri runs to 2 AM Sat</p>
+                  </div>
+                  <div class="ch" data-ch="5" hidden aria-hidden="true">
+                    <div class="osd-t"><span>CH 05</span><span>In store</span></div>
+                    <ul><li>Glassware</li><li>Papers</li><li>Hookah</li><li>Shisha</li><li>Vapes</li><li>E-liquids</li><li>Pouches</li><li>Cigars</li><li>Tobacco</li><li>Accessories</li></ul>
+                    <p class="sm">21+ with ID &middot; in store only</p>
+                  </div>
+                  <div class="ch" data-ch="6" hidden aria-hidden="true">
+                    <div class="osd-t"><span>CH 06</span><span>Directions</span></div>
+                    <p class="mid">933 E University Dr</p>
+                    <p class="mid">Ste 109 &middot; Tempe AZ 85288</p>
+                    <a class="go" tabindex="-1" href="https://www.google.com/maps/search/?api=1&amp;query=Twilight%20Zone%20Smoke%20Shop%2C%20933%20E%20University%20Dr%2C%20Ste%20109%2C%20Tempe%2C%20AZ%2085288" target="_blank" rel="noopener">&#9656; Open in Maps</a>
+                  </div>
+                  <div class="ch" data-ch="7" hidden aria-hidden="true">
+                    <div class="osd-t"><span>CH 07</span><span>Call</span></div>
+                    <h2>Call the shop</h2>
+                    <a class="big" tabindex="-1" href="tel:+14802844397">(480) 284-4397</a>
+                    <p class="sm">Tap the number to call</p>
+                  </div>
+                  <div class="ch ch-13" data-ch="13" hidden aria-hidden="true">
+                    <div class="osd-t"><span>CH 13</span><span></span></div>
+                    <p class="big">13</p>
+                    <p class="sm">Stay tuned</p>
+                  </div>
+                  <canvas class="snow" id="snow" width="140" height="105" aria-hidden="true"></canvas>
+                </div>
+                <div class="vol" id="vol" aria-hidden="true"></div>
+                <div class="roll" aria-hidden="true"></div><div class="scan" aria-hidden="true"></div>
+                <div class="press" id="press" aria-hidden="true"></div>
+                <div class="dark" aria-hidden="true"></div>
+                <div class="curve" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="strip">
+              <div class="badge" aria-hidden="true">VESPER<small>TRUE-TONE 27</small></div>
+              <div class="grille" aria-hidden="true"></div>
+              <div class="ir" aria-hidden="true"></div>
+              <div class="led" aria-hidden="true"></div>
+              <div class="keys">
+                <button class="key pw" type="button" data-k="power" tabindex="-1" aria-label="Power"><small>POWER</small></button>
+                <button class="key" type="button" data-k="vol-" tabindex="-1" aria-label="Volume down"><small>VOL &minus;</small></button>
+                <button class="key" type="button" data-k="vol+" tabindex="-1" aria-label="Volume up"><small>VOL +</small></button>
+                <button class="key" type="button" data-k="ch-" tabindex="-1" aria-label="Channel down"><small>CH &#9662;</small></button>
+                <button class="key" type="button" data-k="ch+" tabindex="-1" aria-label="Channel up"><small>CH &#9652;</small></button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <button class="pick" id="pick" type="button" aria-label="Pick up the TV set to inspect it and change channels"></button>
+      <span class="hint-inspect" aria-hidden="true">Touch the set</span>
+    </div>
+
+    <div class="listing">
+      <p class="when" aria-live="polite"><span id="nowLabel">Every day</span> <b id="nowTime">11 AM&ndash;2 AM</b></p>
+      <p class="what"><strong id="nowLine">Open every day, 11 AM to 2 AM.</strong>933 E University Dr, Ste 109, Tempe. In store only, 21+ with valid ID.</p>
+      <div class="acts">
+        <a class="btn solid" href="tel:+14802844397"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4.2 1.5 6 4.6 4.7 6.1c.8 1.9 2.3 3.4 4.2 4.2l1.5-1.3 3.1 1.8-.6 2.6c-.1.5-.6.9-1.1.9C6 14.3 1.7 10 1.7 4.2c0-.5.4-1 .9-1.1z"/></svg><span>Call <span class="n">(480) 284-4397</span></span></a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Twilight%20Zone%20Smoke%20Shop%2C%20933%20E%20University%20Dr%2C%20Ste%20109%2C%20Tempe%2C%20AZ%2085288" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M8 15s5-4.6 5-8.6A5 5 0 0 0 3 6.4C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.7" fill="currentColor"/></svg>Directions<span class="sr"> (opens Google Maps)</span></a>
+      </div>
+      <p class="warn">WARNING: This product contains nicotine. Nicotine is an addictive chemical.</p>
+    </div>
+  </div>
 </header>
 
-<main id="main" tabindex="-1">
- <div class="hero" id="top" data-ch="01" data-name="Twilight Zone">
-  <div class="room" aria-hidden="true"></div>
-  <div class="wrap hgrid">
-   <div>
-    <p class="badge" id="badge"><span class="lamp" aria-hidden="true">ON AIR</span><span id="status">Open every day, 11 AM to 2 AM</span></p>
-    <h1>Twilight Zone <small>Smoke Shop &middot; Tempe</small></h1>
-    <p class="lead">Smoke shop on University Drive, open every day from 11 in the morning until 2 at night.</p>
-    <p class="lead">Glass, papers, hookah, vapes, cigars and the small stuff you ran out of.</p>
-    <div class="cta">
-     <a class="btn p" href="tel:+14802844397"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call (480) 284-4397</a>
-     <a class="btn s" href="https://www.google.com/maps/search/?api=1&amp;query=Twilight%20Zone%20Smoke%20Shop%2C%20933%20E%20University%20Dr%2C%20Ste%20109%2C%20Tempe%2C%20AZ%2085288" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Get directions<span class="sr"> (opens Google Maps)</span></a>
+<section class="s" id="carry" aria-labelledby="carry-h">
+  <div class="wrap carry">
+    <div class="side rv">
+      <p class="kicker"><b>02</b> &nbsp;Tonight’s listings</p>
+      <h2 id="carry-h">What we carry</h2>
+      <p class="lede">Come in and look around. Everything is sold in the store, never online, and ID gets checked at the counter.</p>
+      <p class="warn">WARNING: This product contains nicotine. Nicotine is an addictive chemical. No online sales. 21+ with valid ID.</p>
     </div>
-    <p class="warn">WARNING: This product contains nicotine. Nicotine is an addictive chemical.</p>
-    <p class="fine">In-store only. 21+ with valid ID.</p>
-   </div>
+    <ol class="guide rv" aria-label="Products in store">
+      <li><span class="no" aria-hidden="true">CH 06</span><span class="nm">Glassware</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li><span class="no" aria-hidden="true">CH 07</span><span class="nm">Rolling papers</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li><span class="no" aria-hidden="true">CH 08</span><span class="nm">Hookah &amp; shisha</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li><span class="no" aria-hidden="true">CH 09</span><span class="nm">Vapes</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li><span class="no" aria-hidden="true">CH 10</span><span class="nm">E-liquids</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li><span class="no" aria-hidden="true">CH 11</span><span class="nm">Nicotine pouches</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li><span class="no" aria-hidden="true">CH 12</span><span class="nm">Cigars</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li class="ghost" aria-hidden="true"><span class="no">CH 13</span><span class="nm"></span><span class="tg"></span></li>
+      <li><span class="no" aria-hidden="true">CH 14</span><span class="nm">Tobacco</span><span class="tg" aria-hidden="true">In store</span></li>
+      <li><span class="no" aria-hidden="true">CH 15</span><span class="nm">Smoking accessories</span><span class="tg" aria-hidden="true">In store</span></li>
+    </ol>
+  </div>
+</section>
 
-   <div class="tvw">
-    <div class="tvb" id="tvb">
-     <svg class="ears" viewBox="0 0 200 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M100 64 38 6M100 64 170 4"/></g><circle cx="38" cy="6" r="5" fill="currentColor"/><circle cx="170" cy="4" r="5" fill="currentColor"/><path d="M76 70a24 16 0 0 1 48 0z" fill="#1b1f2a" stroke="#2c3242" stroke-width="2"/></svg>
-     <div class="tv" id="tv">
-      <button type="button" class="scr" id="scr" aria-label="Change the channel">
-       <span class="pic" id="pic"></span>
-       <canvas id="tvnz" width="128" height="96" aria-hidden="true"></canvas>
-       <span class="hum" aria-hidden="true"></span>
-       <span class="tuning" aria-hidden="true"><i></i><b id="tch">CH 01</b></span>
-      </button>
-      <div class="ctl">
-       <button type="button" class="chb" id="chd" aria-label="Previous channel"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4h10L7 11z" fill="currentColor"/></svg></button>
-       <button type="button" class="chb" id="chu" aria-label="Next channel">CH <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 10h10L7 3z" fill="currentColor"/></svg></button>
-       <span class="leds idle" id="leds" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-       <span class="pwr" id="pwr" aria-hidden="true"></span>
+<section class="s" id="hours" aria-labelledby="hours-h">
+  <div class="wrap hours-g">
+    <div class="rv">
+      <p class="kicker"><b>03</b> &nbsp;Broadcast schedule</p>
+      <h2 id="hours-h">Hours</h2>
+      <p class="span" aria-label="11 AM to 2 AM">11 AM<em aria-hidden="true">&rarr;</em>2 AM</p>
+      <p class="lede" style="margin-top:6px">Every day of the week. Arizona time, which never changes.</p>
+      <p class="now" id="nowClock" aria-live="off">&nbsp;</p>
+    </div>
+    <div class="clockbox rv">
+      <div class="clock" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <g id="ticks"></g>
+          <line id="hHand" x1="100" y1="100" x2="100" y2="58" stroke="#e7e3d7" stroke-width="5" stroke-linecap="round"/>
+          <line id="mHand" x1="100" y1="100" x2="100" y2="32" stroke="#e7e3d7" stroke-width="3" stroke-linecap="round"/>
+          <line id="sHand" x1="100" y1="116" x2="100" y2="26" stroke="#d8402c" stroke-width="1.4"/>
+          <circle cx="100" cy="100" r="4" fill="#d8402c"/>
+        </svg>
       </div>
-     </div>
+      <div>
+        <table class="week" id="week">
+          <caption class="sr">Opening hours, Arizona time</caption>
+          <tbody>
+            <tr data-d="1"><th scope="row">Monday</th><td>11 AM &ndash; 2 AM</td></tr>
+            <tr data-d="2"><th scope="row">Tuesday</th><td>11 AM &ndash; 2 AM</td></tr>
+            <tr data-d="3"><th scope="row">Wednesday</th><td>11 AM &ndash; 2 AM</td></tr>
+            <tr data-d="4"><th scope="row">Thursday</th><td>11 AM &ndash; 2 AM</td></tr>
+            <tr data-d="5"><th scope="row">Friday</th><td>11 AM &ndash; 2 AM</td></tr>
+            <tr data-d="6"><th scope="row">Saturday</th><td>11 AM &ndash; 2 AM</td></tr>
+            <tr data-d="0"><th scope="row">Sunday</th><td>11 AM &ndash; 2 AM</td></tr>
+          </tbody>
+        </table>
+        <p class="hours-note">Closing time is 2 AM the next morning, so Friday’s hours run until 2 AM Saturday.</p>
+      </div>
     </div>
-    <p class="hint">Change the channel to flip through what&rsquo;s in store.</p>
-    <p class="sr" aria-live="polite" id="tvsr"></p>
-   </div>
   </div>
- </div>
+</section>
 
-
- <section id="carry" aria-labelledby="carry-h" data-ch="02" data-name="What we carry">
-  <span class="flash" aria-hidden="true"></span>
-  <div class="wrap">
-   <p class="ident" aria-hidden="true">CH 02 &middot; NOW SHOWING</p>
-   <h2 id="carry-h">What we carry</h2>
-   <p class="intro">Come in and look around. Everything is sold in store only, and ID gets checked at the counter. Tap one to put it on the TV.</p>
-   <ul class="guide" id="guide">
-    <li><button type="button" class="tile" data-k="0"><span class="ic"><svg aria-hidden="true"><use href="#i-glass"/></svg></span><span><span class="tn">Glassware</span><small aria-hidden="true">CH 1</small></span></button></li>
-    <li><button type="button" class="tile" data-k="1"><span class="ic"><svg aria-hidden="true"><use href="#i-papers"/></svg></span><span><span class="tn">Rolling papers</span><small aria-hidden="true">CH 2</small></span></button></li>
-    <li><button type="button" class="tile" data-k="2"><span class="ic"><svg aria-hidden="true"><use href="#i-hookah"/></svg></span><span><span class="tn">Hookah &amp; shisha</span><small aria-hidden="true">CH 3</small></span></button></li>
-    <li><button type="button" class="tile" data-k="3"><span class="ic"><svg aria-hidden="true"><use href="#i-vape"/></svg></span><span><span class="tn">Vapes</span><small aria-hidden="true">CH 4</small></span></button></li>
-    <li><button type="button" class="tile" data-k="4"><span class="ic"><svg aria-hidden="true"><use href="#i-eliquid"/></svg></span><span><span class="tn">E-liquids</span><small aria-hidden="true">CH 5</small></span></button></li>
-    <li><button type="button" class="tile" data-k="5"><span class="ic"><svg aria-hidden="true"><use href="#i-pouch"/></svg></span><span><span class="tn">Nicotine pouches</span><small aria-hidden="true">CH 6</small></span></button></li>
-    <li><button type="button" class="tile" data-k="6"><span class="ic"><svg aria-hidden="true"><use href="#i-cigar"/></svg></span><span><span class="tn">Cigars</span><small aria-hidden="true">CH 7</small></span></button></li>
-    <li><button type="button" class="tile" data-k="7"><span class="ic"><svg aria-hidden="true"><use href="#i-pipe"/></svg></span><span><span class="tn">Tobacco</span><small aria-hidden="true">CH 8</small></span></button></li>
-    <li><button type="button" class="tile" data-k="8"><span class="ic"><svg aria-hidden="true"><use href="#i-lighter"/></svg></span><span><span class="tn">Smoking accessories</span><small aria-hidden="true">CH 9</small></span></button></li>
-   </ul>
-   <div class="nic">
-    <p><strong>WARNING: This product contains nicotine. Nicotine is an addictive chemical.</strong></p>
-    <p>No online sales. 21+ with valid ID.</p>
-   </div>
-  </div>
- </section>
-
- <section id="hours" aria-labelledby="hours-h" data-ch="03" data-name="Hours">
-  <span class="flash" aria-hidden="true"></span>
-  <div class="wrap hours">
-   <div>
-    <p class="ident" aria-hidden="true">CH 03 &middot; TONIGHT&rsquo;S SCHEDULE</p>
-    <h2 id="hours-h">Hours</h2>
-    <p class="big">11 AM to 2 AM, every day.</p>
-    <div class="onair" id="onair">
-     <div class="clk"><span id="oa-l">TEMPE TIME</span><b id="oa-t">&nbsp;</b></div>
-     <div class="prog" aria-hidden="true"><i id="oa-p"></i></div>
-     <div class="ticks" aria-hidden="true"><span>11 AM</span><span>6 PM</span><span>MIDNIGHT</span><span>2 AM</span></div>
-     <p id="oa-m">Open every day from 11 AM to 2 AM.</p>
+<section class="s" id="visit" aria-labelledby="visit-h">
+  <div class="wrap visit-g">
+    <div class="rv">
+      <p class="kicker"><b>04</b> &nbsp;Live from University Drive</p>
+      <h2 id="visit-h">Visit</h2>
+      <address class="addr">933 E University Dr<span>Ste 109, Tempe, AZ 85288</span></address>
+      <div class="acts">
+        <a class="btn solid" href="tel:+14802844397"><span>Call <span class="n">(480) 284-4397</span></span></a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Twilight%20Zone%20Smoke%20Shop%2C%20933%20E%20University%20Dr%2C%20Ste%20109%2C%20Tempe%2C%20AZ%2085288" target="_blank" rel="noopener">Get directions<span class="sr"> (opens Google Maps)</span></a>
+      </div>
+      <ul class="facts">
+        <li data-k="01">Wheelchair-accessible entrance</li>
+        <li data-k="02">Cards and tap-to-pay accepted</li>
+        <li data-k="03">Bring a valid ID. You must be 21+ to buy.</li>
+        <li data-k="04">In-store only. No online sales.</li>
+      </ul>
     </div>
-    <p class="intro">Still on after most of Tempe signs off. Closing time is 2 AM the next morning, so Friday&rsquo;s hours run until 2 AM Saturday.</p>
-   </div>
-   <table id="ht">
-    <caption>Arizona time. No daylight saving, so these never shift.</caption>
-    <thead><tr><th scope="col">Day</th><th scope="col">Hours</th></tr></thead>
-    <tbody>
-     <tr data-d="1"><th scope="row">Monday<span class="tag"></span></th><td>11:00 AM &ndash; 2:00 AM</td></tr>
-     <tr data-d="2"><th scope="row">Tuesday<span class="tag"></span></th><td>11:00 AM &ndash; 2:00 AM</td></tr>
-     <tr data-d="3"><th scope="row">Wednesday<span class="tag"></span></th><td>11:00 AM &ndash; 2:00 AM</td></tr>
-     <tr data-d="4"><th scope="row">Thursday<span class="tag"></span></th><td>11:00 AM &ndash; 2:00 AM</td></tr>
-     <tr data-d="5"><th scope="row">Friday<span class="tag"></span></th><td>11:00 AM &ndash; 2:00 AM</td></tr>
-     <tr data-d="6"><th scope="row">Saturday<span class="tag"></span></th><td>11:00 AM &ndash; 2:00 AM</td></tr>
-     <tr data-d="0"><th scope="row">Sunday<span class="tag"></span></th><td>11:00 AM &ndash; 2:00 AM</td></tr>
-    </tbody>
-   </table>
-  </div>
- </section>
-
- <section id="visit" aria-labelledby="visit-h" data-ch="04" data-name="Visit">
-  <span class="flash" aria-hidden="true"></span>
-  <div class="wrap visit">
-   <div>
-    <p class="ident" aria-hidden="true">CH 04 &middot; LIVE FROM UNIVERSITY DR</p>
-    <h2 id="visit-h">Visit</h2>
-    <address><strong>Twilight Zone Smoke Shop</strong><br>933 E University Dr, Ste 109<br>Tempe, AZ 85288</address>
-    <div class="cta" style="margin:0">
-     <a class="btn p" href="tel:+14802844397">Call (480) 284-4397</a>
-     <a class="btn s" href="https://www.google.com/maps/search/?api=1&amp;query=Twilight%20Zone%20Smoke%20Shop%2C%20933%20E%20University%20Dr%2C%20Ste%20109%2C%20Tempe%2C%20AZ%2085288" target="_blank" rel="noopener">Get directions<span class="sr"> (opens Google Maps)</span></a>
+    <div class="rv" id="storefront">
+      <div class="window" aria-hidden="true">
+        <div class="glow"></div>
+        <i class="slat"></i><div class="neon">OP<span class="e">E</span>N</div>
+        <div class="plate">STE 109</div>
+      </div>
     </div>
-    <ul class="facts">
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="4" r="2"/><path d="M11 7v6h5l3 6M11 10h5M8 11a6 6 0 1 0 6.5 8"/></svg>Wheelchair-accessible entrance</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>Cards and tap-to-pay accepted</li>
-     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="11" r="2.5"/><path d="M4.5 17c.8-2 2-3 3.5-3s2.7 1 3.5 3M14 9h5M14 13h4"/></svg>Bring a valid ID. You must be 21+ to buy.</li>
-    </ul>
-   </div>
-   <div class="map"><span class="tag2" aria-hidden="true">LIVE &middot; 933 E UNIVERSITY</span><iframe title="Map: Twilight Zone Smoke Shop, 933 E University Dr, Ste 109, Tempe, AZ" src="https://www.google.com/maps?q=933%20E%20University%20Dr%2C%20Ste%20109%2C%20Tempe%2C%20AZ%2085288&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
   </div>
- </section>
+</section>
 </main>
 
-<footer data-ch="05" data-name="Sign-off">
- <canvas class="fbars" id="fbars" width="420" height="28" aria-hidden="true"></canvas>
- <div class="wrap">
-  <p class="signoff" aria-hidden="true">END OF BROADCAST<span>WE&rsquo;RE ON UNTIL 2 AM. COME THROUGH.</span></p>
-  <div class="cols">
-   <div><h2>Twilight Zone Smoke Shop</h2><p>933 E University Dr, Ste 109<br>Tempe, AZ 85288<br><a href="tel:+14802844397">(480) 284-4397</a></p></div>
-   <div><h2>Hours</h2><p>Every day, 11 AM to 2 AM.<br>Arizona time.</p></div>
-   <div><h2>21+ only</h2><p><strong>WARNING: This product contains nicotine. Nicotine is an addictive chemical.</strong><br>In-store only. Valid ID required.</p></div>
+<footer class="signoff">
+  <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="bars2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div>
+      <p class="kicker"><b>05</b> &nbsp;End of broadcast</p>
+      <h2>We’re on until 2&nbsp;AM. Every night.</h2>
+      <div class="acts">
+        <a class="btn solid" href="tel:+14802844397"><span>Call <span class="n">(480) 284-4397</span></span></a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Twilight%20Zone%20Smoke%20Shop%2C%20933%20E%20University%20Dr%2C%20Ste%20109%2C%20Tempe%2C%20AZ%2085288" target="_blank" rel="noopener">Directions<span class="sr"> (opens Google Maps)</span></a>
+      </div>
+    </div>
+    <div class="foot">
+      <p><strong>Twilight Zone Smoke Shop</strong><br>933 E University Dr, Ste 109, Tempe, AZ 85288<br>(480) 284-4397 &middot; Every day, 11 AM to 2 AM, Arizona time</p>
+      <p>21+ only. WARNING: This product contains nicotine. Nicotine is an addictive chemical. In-store only, valid ID required.</p>
+      <p class="sets">Thank you for watching. Please turn off your set. If it turns itself back on, that’s normal.</p>
+      <p class="adolla">Concept site by Adolla &middot; <a href="https://adolla.business/">adolla.business</a> &middot; not affiliated with or endorsed by Twilight Zone Smoke Shop.</p>
+    </div>
   </div>
-  <p class="credit">&copy; 2026 Twilight Zone Smoke Shop. Concept site by Adolla &middot; adolla.business &middot; not affiliated with or endorsed by Twilight Zone Smoke Shop</p>
- </div>
 </footer>
 
-<div class="bug" id="bug" aria-hidden="true">CH <b id="bug-n">01</b><span id="bug-t">Twilight Zone</span></div>
-
-<div id="gate" role="dialog" aria-modal="true" aria-labelledby="g-t" aria-describedby="g-d">
- <canvas id="gnz" width="160" height="100" aria-hidden="true"></canvas>
- <div class="gp">
-  <div class="gbars" aria-hidden="true"><i style="background:#e8e8e8"></i><i style="background:#e8d44d"></i><i style="background:#5fd6e0"></i><i style="background:#62c46a"></i><i style="background:#c95bc4"></i><i style="background:#d6453d"></i><i style="background:#3d52c9"></i></div>
-  <p class="sb">Please stand by</p>
-  <h2 id="g-t">Are you 21 or older?</h2>
-  <p id="g-d">This site is for adults 21 and over. ID is checked at the counter too.</p>
-  <div class="gbtns">
-   <button type="button" class="btn p" id="yes">I&rsquo;m 21 or older</button>
-   <button type="button" class="btn s" id="no">I&rsquo;m under 21</button>
+<div class="inspect-bg" id="ibg" aria-hidden="true"></div>
+<div class="ihud tophud" id="ihudTop" role="dialog" aria-label="Inspecting the TV set" hidden>
+  <p class="hint" id="ihint">Drag to turn it<span class="kb"> &middot; Esc to put it back</span></p>
+  <button class="btn x" type="button" id="iclose">Put it back</button>
+</div>
+<div class="ihud remote" id="ihudRemote" hidden>
+  <div class="tune" role="group" aria-label="Channels">
+    <button type="button" data-tune="3" aria-pressed="true"><b>03</b>On air</button>
+    <button type="button" data-tune="4" aria-pressed="false"><b>04</b>Hours</button>
+    <button type="button" data-tune="5" aria-pressed="false"><b>05</b>In store</button>
+    <button type="button" data-tune="6" aria-pressed="false"><b>06</b>Directions</button>
+    <button type="button" data-tune="7" aria-pressed="false"><b>07</b>Call</button>
   </div>
-  <p class="fine">We&rsquo;ll remember your answer on this device for 30 days.</p>
- </div>
 </div>
 
 <script>
 (function(){
-var $=function(s){return document.querySelector(s)},D=document,root=D.documentElement;
-var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  'use strict';
+  var mq = window.matchMedia ? matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var RM = !!(mq && mq.matches);
+  if(mq && mq.addEventListener) mq.addEventListener('change', function(e){ RM = e.matches; });
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var body = document.body, root = document.documentElement;
 
-/* ---- open / closed, America/Phoenix. Each day's shift: 11:00 to 02:00 the next morning ---- */
-var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/Phoenix',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'});
-var DN={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},OPEN=660,CLOSE=120,SHIFT=1440+CLOSE-OPEN;
-function now(){var o={};fmt.formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});return{d:DN[o.weekday],m:(+o.hour%24)*60+(+o.minute)}}
-function clock(m){var h=Math.floor(m/60),mm=m%60;return ((h+11)%12+1)+':'+(mm<10?'0':'')+mm+(h<12?' AM':' PM')}
-function dur(n){var h=Math.floor(n/60),m=n%60;return (h?h+' hr ':'')+m+' min'}
-function upd(){
- var n=now(),late=n.m<CLOSE,open=late||n.m>=OPEN,day=late?(n.d+6)%7:n.d,left=late?CLOSE-n.m:1440+CLOSE-n.m;
- var b=$('#badge'),s=$('#status');
- b.classList.toggle('on',open);b.firstChild.textContent=open?'ON AIR':'OFF AIR';
- s.textContent=open?(left<=60?'Open now · closes in '+left+' min':'Open now · until 2 AM'):'Closed · opens at 11 AM';
- D.querySelectorAll('#ht tr[data-d]').forEach(function(r){
-  var t=+r.getAttribute('data-d')===day,g=r.querySelector('.tag');
-  r.classList.toggle('today',t);
-  if(t){r.setAttribute('aria-current','date');g.textContent=late?'Tonight':'Today'}else{r.removeAttribute('aria-current');g.textContent=''}
- });
- /* tonight's broadcast bar: where we are in the 11 AM to 2 AM shift */
- var into=open?(late?n.m+1440-OPEN:n.m-OPEN):0;
- $('#oa-t').textContent=clock(n.m);
- $('#oa-l').textContent=open?'ON AIR · TEMPE':'OFF AIR · TEMPE';
- $('#oa-p').style.width=(open?Math.min(100,into/SHIFT*100):0)+'%';
- $('#oa-m').textContent=open?'On air now. '+dur(left)+' left tonight.':'Off air right now. Back on at 11 AM ('+dur(OPEN-n.m)+').';
-}
-upd();setInterval(upd,30000);
+  /* ---------- age gate ---------- */
+  var KEY = 'tz-21-v3', DAYS = 30 * 864e5, gate = $('#gate'), started = false;
+  function remembered(){ try{ var t = +localStorage.getItem(KEY); return !!t && Date.now() - t < DAYS; }catch(e){ return false; } }
+  function remember(){ try{ localStorage.setItem(KEY, String(Date.now())); }catch(e){} }
+  function unlock(){ gate.hidden = true; body.classList.remove('locked'); start(); }
+  if(remembered()){ unlock(); }
+  else { gate.hidden = false; setTimeout(function(){ $('#yes').focus(); }, 30); }
+  $('#yes').addEventListener('click', function(){ remember(); unlock(); });
+  $('#no').addEventListener('click', function(){
+    $('#gcard').innerHTML = '<div class="osd" aria-hidden="true">CH 03 &nbsp;&middot;&nbsp; Signal lost</div><h2 id="gt" tabindex="-1">Come back when you’re 21.</h2><p>Thanks for being honest. This channel will still be here.</p>';
+    $('#gt').focus();
+  });
 
-/* ---- static noise helper ---- */
-function Noise(c){this.c=c;this.x=c.getContext('2d');this.im=this.x.createImageData(c.width,c.height);this.on=false;this.t=0;this.id=0;this.fast=false}
-Noise.prototype.draw=function(){var d=this.im.data,w=this.c.width,i,v,row,tear=Math.random()<.5?Math.random()*this.c.height|0:-1;for(i=0;i<d.length;i+=4){row=(i/4/w)|0;v=Math.random()*255|0;if(row===tear||row===tear+1)v=230+Math.random()*25;d[i]=v*.92;d[i+1]=v*.97;d[i+2]=v;d[i+3]=255}this.x.putImageData(this.im,0,0)};
-Noise.prototype.start=function(){var s=this;if(s.on)return;s.on=true;(function f(t){if(!s.on)return;s.id=requestAnimationFrame(f);if(t-s.t<(s.fast?30:50))return;s.t=t;s.draw()})(0)};
-Noise.prototype.stop=function(){this.on=false;cancelAnimationFrame(this.id)};
-
-/* ---- the TV ---- */
-var CH=[
- {n:'Glassware',i:'glass',h:195},{n:'Rolling papers',i:'papers',h:40},{n:'Hookah & shisha',i:'hookah',h:280},
- {n:'Vapes',i:'vape',w:1,h:170},{n:'E-liquids',i:'eliquid',w:1,h:320},{n:'Nicotine pouches',i:'pouch',w:1,h:140},
- {n:'Cigars',i:'cigar',h:20},{n:'Tobacco',i:'pipe',h:60},{n:'Smoking accessories',i:'lighter',h:0}
-];
-var WARN='WARNING: This product contains nicotine. Nicotine is an addictive chemical.';
-var BARS=['#e8e8e8','#e8d44d','#5fd6e0','#62c46a','#c95bc4','#d6453d','#3d52c9'];
-var pic=$('#pic'),scr=$('#scr'),sr=$('#tvsr'),tv=$('#tv'),leds=$('#leds'),L=[].slice.call(leds.children),tch=$('#tch'),pwr=$('#pwr'),tvn=new Noise($('#tvnz')),cur=-1,surfT,lockT,ledT;
-L.forEach(function(e,k){e.style.setProperty('--h',CH[k].h)});
-D.querySelectorAll('.tile').forEach(function(t,k){t.style.setProperty('--h',CH[k].h);t.style.setProperty('--d',(k*.06)+'s')});
-function esc(s){return s.replace(/&/g,'&amp;')}
-function two(k){return (k<9?'0':'')+(k+1)}
-function paint(k){
- if(k<0){pic.style.removeProperty('--h');pic.innerHTML='<span class="bars">'+BARS.map(function(c){return '<i style="background:'+c+'"></i>'}).join('')+'</span><span class="plate">Twilight Zone<span>PRESS CH TO SEE WHAT&rsquo;S IN STORE</span></span>';return}
- var c=CH[k];pic.style.setProperty('--h',c.h);
- pic.innerHTML='<span class="osd">CH '+two(k)+'</span><svg aria-hidden="true"><use href="#i-'+c.i+'"/></svg><span class="nm">'+esc(c.n)+'</span>'+(c.w?'<span class="l3">'+WARN+'</span>':'');
-}
-function lightLeds(k){
- leds.classList.toggle('idle',k<0);
- L.forEach(function(e,j){e.style.height='';e.classList.toggle('on',j===k);e.classList.toggle('near',k>=0&&Math.abs(j-k)===1)});
- tv.style.setProperty('--tint',k<0?'rgba(143,216,255,.14)':'hsl('+CH[k].h+' 90% 65% / .2)');
-}
-function scanLeds(){ /* signal-meter jitter while it's between channels */
- leds.classList.remove('idle');
- L.forEach(function(e){e.classList.remove('on','near');e.style.height=(15+Math.random()*85)+'%'});
-}
-var TUNE_MS=560;
-function tune(k){
- cur=k;
- sr.textContent='Channel '+(cur+1)+': '+CH[cur].n+(CH[cur].w?'. '+WARN:'');
- if(reduce){paint(cur);lightLeds(cur);return}
- staticSound(TUNE_MS/1000);
- var tw=$('.tvw');tw.classList.remove('jolt');void tw.offsetWidth;tw.classList.add('jolt');
- pwr.classList.remove('blink');void pwr.offsetWidth;pwr.classList.add('blink');
- clearTimeout(surfT);clearTimeout(lockT);clearInterval(ledT);
- tch.textContent='CH '+two(cur);
- scr.classList.remove('lock');scr.classList.add('surf');tvn.fast=true;tvn.draw();tvn.start();
- scanLeds();ledT=setInterval(scanLeds,70);
- surfT=setTimeout(function(){
-  clearInterval(ledT);paint(cur);lightLeds(cur);tvn.fast=false;if(!visT)tvn.stop();
-  scr.classList.remove('surf');void scr.offsetWidth;scr.classList.add('lock');
-  lockT=setTimeout(function(){scr.classList.remove('lock')},420);
- },TUNE_MS);
-}
-function step(dir){tune(cur<0?(dir>0?0:CH.length-1):(cur+dir+CH.length)%CH.length)}
-
-/* channel change sound: knob clunk, then a hiss of real-sounding TV static for as long as the screen is snowy (synthesized, no files) */
-var AC=null,hiss=null;
-function staticSound(len){
- try{
-  AC=AC||new (window.AudioContext||window.webkitAudioContext)();
-  if(AC.state==='suspended')AC.resume();
-  if(hiss){try{hiss.stop()}catch(e){}}
-  var t=AC.currentTime,sr=AC.sampleRate,n=Math.floor(sr*(len+.12)),buf=AC.createBuffer(1,n,sr),d=buf.getChannelData(0),i,amp=1,next=0;
-  for(i=0;i<n;i++){
-   if(i>=next){amp=.55+Math.random()*.45;next=i+(sr*(.008+Math.random()*.03)|0)} /* the flutter of a detuned signal */
-   d[i]=(Math.random()*2-1)*amp;
-   if(Math.random()<.0009)d[i]=Math.random()<.5?-1:1; /* crackle */
+  /* ---------- Arizona time + open status ---------- */
+  var fmt = new Intl.DateTimeFormat('en-US', {timeZone:'America/Phoenix', hour:'numeric', minute:'2-digit', second:'2-digit', hour12:false, weekday:'short'});
+  function az(){
+    var o = {}; fmt.formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    return {h:(+o.hour) % 24, m:+o.minute, s:+o.second, d:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[o.weekday]};
   }
-  var src=AC.createBufferSource(),hp=AC.createBiquadFilter(),lp=AC.createBiquadFilter(),g=AC.createGain();
-  src.buffer=buf;hp.type='highpass';hp.frequency.value=450;lp.type='lowpass';lp.frequency.value=7600;
-  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.26,t+.015);g.gain.setValueAtTime(.2,t+len*.7);g.gain.exponentialRampToValueAtTime(.0001,t+len+.1);
-  src.connect(hp);hp.connect(lp);lp.connect(g);g.connect(AC.destination);src.start(t);src.stop(t+len+.12);hiss=src;
-  var o=AC.createOscillator(),g2=AC.createGain();o.type='square';
-  o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(55,t+.05);
-  g2.gain.setValueAtTime(.12,t);g2.gain.exponentialRampToValueAtTime(.0001,t+.07);
-  o.connect(g2);g2.connect(AC.destination);o.start(t);o.stop(t+.08);
-  var b=AC.createOscillator(),g3=AC.createGain();b.type='sine'; /* the picture locking in */
-  b.frequency.setValueAtTime(15700,t+len);
-  g3.gain.setValueAtTime(.0001,t+len);g3.gain.exponentialRampToValueAtTime(.025,t+len+.01);g3.gain.exponentialRampToValueAtTime(.0001,t+len+.18);
-  b.connect(g3);g3.connect(AC.destination);b.start(t+len);b.stop(t+len+.2);
- }catch(e){}
-}
-paint(-1);lightLeds(-1);tvn.draw();
-scr.addEventListener('click',function(){step(1)});
-$('#chu').addEventListener('click',function(){step(1)});
-$('#chd').addEventListener('click',function(){step(-1)});
-/* a product tile puts its channel on the TV */
-D.querySelectorAll('.tile').forEach(function(t){t.addEventListener('click',function(){
- var k=+t.getAttribute('data-k');$('#top').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
- setTimeout(function(){tune(k)},reduce?0:380);
-})});
-var visT=false;
-if(!reduce){
- if('IntersectionObserver' in window)new IntersectionObserver(function(e){visT=e[0].isIntersecting;visT?tvn.start():(scr.classList.contains('surf')||tvn.stop())}).observe(scr);
- else tvn.start();
-}
-/* the TV leans toward the pointer a little */
-var tvb=$('#tvb');
-if(!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){
- $('.hero').addEventListener('pointermove',function(e){var r=tvb.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tvb.style.setProperty('--ry',(x*8).toFixed(2)+'deg');tvb.style.setProperty('--rx',(-y*6).toFixed(2)+'deg')});
- $('.hero').addEventListener('pointerleave',function(){tvb.style.setProperty('--ry','0deg');tvb.style.setProperty('--rx','0deg')});
-}
-
-/* ---- the page as a broadcast: scroll progress, sections tune in, the channel bug ---- */
-var secs=[].slice.call(D.querySelectorAll('[data-ch]')),bug=$('#bug'),bn=$('#bug-n'),bt=$('#bug-t'),navA=[].slice.call(D.querySelectorAll('.nav a[data-sec]')),onNow=null,ticking=false;
-function onScroll(){
- if(ticking)return;ticking=true;
- requestAnimationFrame(function(){
-  ticking=false;
-  var max=root.scrollHeight-innerHeight,p=max>0?Math.min(1,scrollY/max):0;root.style.setProperty('--sp',p.toFixed(4));
-  var mid=innerHeight*.45,hit=secs[0];
-  secs.forEach(function(s){if(s.getBoundingClientRect().top<=mid)hit=s});
-  if(hit!==onNow){
-   onNow=hit;bn.textContent=hit.getAttribute('data-ch');bt.textContent=hit.getAttribute('data-name');
-   bug.classList.remove('chg');void bug.offsetWidth;bug.classList.add('chg');
-   navA.forEach(function(a){a.classList.toggle('here',a.getAttribute('data-sec')===hit.id)});
+  function isOpen(t){ return t.h >= 11 || t.h < 2; }
+  function clock12(t){ var h = t.h % 12 || 12; return h + ':' + (t.m < 10 ? '0' : '') + t.m + (t.h < 12 ? ' AM' : ' PM'); }
+  var DAYN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var lastOpen = null;
+  function updateStatus(){
+    var t = az(), on = isOpen(t);
+    $$('.azclock').forEach(function(n){ n.textContent = clock12(t); });
+    var nc = $('#nowClock');
+    nc.innerHTML = 'It’s <b>' + clock12(t) + '</b> in Tempe. ' + (on ? 'We’re <b>open</b>.' : 'We’re <b>closed</b>.');
+    if(on === lastOpen) return;
+    lastOpen = on;
+    body.classList.toggle('on-air', on);
+    body.classList.toggle('neon-on', on);
+    $('#tv').classList.toggle('off', !on);
+    $('#lampTxt').textContent = on ? 'ON AIR' : 'OFF AIR';
+    $('#tvStatus').innerHTML = on ? '<b>ON AIR</b>Open until 2 AM' : '<b>OFF AIR</b>Back on at 11 AM';
+    $('#nowLabel').textContent = on ? 'On air now' : 'Off air now';
+    $('#nowTime').textContent = on ? 'until 2 AM' : 'back 11 AM';
+    $('#nowLine').textContent = on ? 'Open right now, until 2 AM.' : 'Closed right now. Opens at 11 AM today.';
+    // after midnight the night that began yesterday is still running
+    var d = t.h < 2 ? (t.d + 6) % 7 : t.d;
+    $$('#week tr').forEach(function(r){
+      var me = +r.getAttribute('data-d') === d; r.classList.toggle('today', me);
+      var th = r.querySelector('th'); th.innerHTML = DAYN[+r.getAttribute('data-d')] + (me ? '<span class="sub">' + (on ? 'On air now' : 'Today') + '</span>' : '');
+    });
   }
-  bug.classList.toggle('show',scrollY>innerHeight*.5);
- });
-}
-addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
-if('IntersectionObserver' in window&&!reduce){
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('tuned');io.unobserve(e.target)}})},{threshold:.18,rootMargin:'0px 0px -8% 0px'});
- D.querySelectorAll('section').forEach(function(s){io.observe(s)});
-}else D.querySelectorAll('section').forEach(function(s){s.classList.add('tuned')});
+  updateStatus(); setInterval(updateStatus, 15000);
 
-/* ---- footer test bars: a signal that never quite holds ---- */
-(function(){
- var c=$('#fbars');if(!c)return;
- var x=c.getContext('2d'),W=c.width,H=c.height,im=x.createImageData(W,H),d=im.data,on=false,id=0,last=0,trouble=0,swap=null,lost=0;
- var COL=[[232,232,232],[232,212,77],[95,214,224],[98,196,106],[201,91,196],[214,69,61],[61,82,201]],bw=W/7;
- function frame(t){
-  if(trouble<=0&&Math.random()<.05)trouble=3+Math.random()*9|0;      /* a few frames of bad signal */
-  if(lost<=0&&Math.random()<.006)lost=4+Math.random()*6|0;            /* now and then it drops out completely */
-  if(!swap&&Math.random()<.012)swap=[Math.random()*7|0,Math.random()*7|0];
-  else if(swap&&Math.random()<.08)swap=null;
-  var flick=.8+Math.random()*.2,drift=Math.sin(t/700)*2.5,band=(t/28)%(H*2.4)-H*.7;
-  for(var y=0;y<H;y++){
-   var near=Math.abs(y-band)<4,off=drift+(trouble>0?(Math.random()-.5)*34:(Math.random()<.05?(Math.random()-.5)*7:0))+(near?6:0);
-   var snow=lost>0?1:trouble>0?.35:.07,dim=near?.55:1,tear=trouble>0&&Math.random()<.12;
-   for(var px=0;px<W;px++){
-    var i=(y*W+px)*4,v;
-    if(tear||Math.random()<snow){v=Math.random()*235|0;d[i]=v;d[i+1]=v;d[i+2]=v}
-    else{var k=((px+off+W*2)%W)/bw|0;if(swap&&k===swap[0])k=swap[1];var col=COL[k],a=flick*dim*(.9+Math.random()*.1);
-     d[i]=col[0]*a;d[i+1]=col[1]*a;d[i+2]=col[2]*a;
-     if(trouble>0&&px>2){d[i]=d[i-8]}}                                   /* colour bleeding sideways */
-    d[i+3]=255;
-   }
+  /* ---------- the clock (its second hand runs the other way) ---------- */
+  var tk = '';
+  for(var i = 0; i < 60; i++){ var a = i * Math.PI / 30, big = i % 5 === 0, r1 = big ? 82 : 89;
+    tk += '<line x1="' + (100 + Math.sin(a) * r1).toFixed(2) + '" y1="' + (100 - Math.cos(a) * r1).toFixed(2) + '" x2="' + (100 + Math.sin(a) * 94).toFixed(2) + '" y2="' + (100 - Math.cos(a) * 94).toFixed(2) + '" stroke="' + (big ? '#a3a197' : '#3d3d39') + '" stroke-width="' + (big ? 2.2 : 1) + '"/>'; }
+  $('#ticks').innerHTML = tk;
+  function tickClock(){
+    var t = az();
+    $('#hHand').setAttribute('transform', 'rotate(' + ((t.h % 12 + t.m / 60) * 30) + ' 100 100)');
+    $('#mHand').setAttribute('transform', 'rotate(' + ((t.m + t.s / 60) * 6) + ' 100 100)');
+    $('#sHand').setAttribute('transform', 'rotate(' + (-t.s * 6) + ' 100 100)');
   }
-  x.putImageData(im,0,0);
-  if(trouble>0)trouble--;if(lost>0)lost--;
- }
- function loop(t){if(!on)return;id=requestAnimationFrame(loop);if(t-last<70)return;last=t;frame(t)}
- frame(0);
- if(reduce)return;
- if('IntersectionObserver' in window)new IntersectionObserver(function(e){if(e[0].isIntersecting){if(!on){on=true;id=requestAnimationFrame(loop)}}else{on=false;cancelAnimationFrame(id)}}).observe(c);
- else{on=true;id=requestAnimationFrame(loop)}
-})();
+  tickClock(); setInterval(function(){ if(!RM && !document.hidden) tickClock(); }, 1000);
 
-/* ---- age gate ---- */
-var gate=$('#gate');
-if(!root.classList.contains('v')){
- var yes=$('#yes'),no=$('#no'),gn=new Noise($('#gnz')),done=false;
- var bg=[D.querySelector('header.top'),$('#main'),D.querySelector('footer'),D.querySelector('.skip')];
- bg.forEach(function(e){e&&e.setAttribute('inert','')});
- D.body.style.overflow='hidden';
- reduce?gn.draw():gn.start();
- yes.focus();
- gate.addEventListener('keydown',function(e){
-  if(e.key!=='Tab')return;
-  var a=D.activeElement;
-  if(e.shiftKey&&a!==no){e.preventDefault();no.focus()}
-  else if(!e.shiftKey&&a!==yes){e.preventDefault();yes.focus()}
-  else if(e.shiftKey&&a===no){e.preventDefault();yes.focus()}
- });
- D.addEventListener('focusin',function(e){if(!done&&!gate.contains(e.target))yes.focus()});
- no.addEventListener('click',function(){location.replace('https://www.google.com')});
- function end(){
-  if(done)return;done=true;
-  gate.hidden=true;gn.stop();
-  bg.forEach(function(e){e&&e.removeAttribute('inert')});
-  D.body.style.overflow='';
-  D.removeEventListener('keydown',skip,true);D.removeEventListener('pointerdown',skip,true);
-  $('#main').focus({preventScroll:true});
-  if(!reduce)root.classList.add('powered');
- }
- function skip(){end()}
- yes.addEventListener('click',function(){
-  try{localStorage.setItem('tz21',String(Date.now()))}catch(e){}
-  yes.disabled=no.disabled=true;
-  if(reduce){end();return}
-  /* short power-on: 150ms static flare, 500ms collapse. Any key or tap skips it. */
-  D.addEventListener('keydown',skip,true);D.addEventListener('pointerdown',skip,true);
-  gate.classList.add('flare');
-  staticSound(.3);
-  setTimeout(function(){gate.classList.add('off')},150);
-  gate.addEventListener('animationend',end);
-  setTimeout(end,900);
- });
-}
+  /* ---------- the set ---------- */
+  var tv = $('#tv'), glass = $('#glass'), feed = $('#feed'), wrapEl = $('#tvwrap'), stage = $('#stage');
+  var ORDER = [3,4,5,6,7], ch = 3, powered = true, vol = 9;
+  function setChannel(n, burst){
+    ch = n;
+    $$('.ch', feed).forEach(function(c){ var me = +c.getAttribute('data-ch') === n; c.hidden = !me; if(+c.getAttribute('data-ch') !== 3) c.setAttribute('aria-hidden', me && inspecting ? 'false' : 'true'); });
+    glass.classList.toggle('c13', n === 13);
+    $$('.tune button').forEach(function(b){ b.setAttribute('aria-pressed', String(+b.getAttribute('data-tune') === n)); });
+    syncLinks();
+    if(burst && !RM){ glass.classList.add('burst'); setTimeout(function(){ glass.classList.remove('burst'); }, 220); }
+    if(inspecting) announce(n);
+  }
+  function syncLinks(){ $$('.ch a', feed).forEach(function(a){ a.tabIndex = (inspecting && !a.closest('.ch').hidden) ? 0 : -1; }); }
+  var downCount = 0;
+  function step(dir){
+    if(!powered) return;
+    var idx = ORDER.indexOf(ch), next;
+    if(ch === 13) next = dir > 0 ? 3 : 7;
+    else if(dir > 0 && ch === 7){ next = 13; }        // one press past the last channel
+    else next = ORDER[(idx + dir + ORDER.length) % ORDER.length];
+    setChannel(next, true);
+  }
+  var volT, healT;
+  function showVol(){
+    var v = $('#vol'), s = 'VOLUME ';
+    for(var i = 0; i < 16; i++) s += '<i' + (i < vol ? ' class="on"' : '') + '></i>';
+    v.innerHTML = s + ' ' + (vol < 10 ? '0' : '') + vol;
+    v.classList.add('show'); clearTimeout(volT); volT = setTimeout(function(){ v.classList.remove('show'); }, 1800);
+  }
+  function volume(dir){
+    if(!powered) return;
+    vol = Math.max(0, Math.min(16, vol + dir)); showVol();
+    clearTimeout(healT);
+    if(vol === 0) healT = setTimeout(function(){ vol = 1; showVol(); }, 1300);   // it never goes all the way quiet
+  }
+  var reviveT;
+  function power(){
+    powered = !powered;
+    tv.classList.toggle('powered-off', !powered);
+    clearTimeout(reviveT);
+    if(!powered) reviveT = setTimeout(function(){ if(!powered) power(); }, 7000);   // it turns itself back on
+  }
+  $$('.key').forEach(function(k){
+    k.addEventListener('click', function(e){
+      if(dragMoved){ e.preventDefault(); return; }
+      var a = k.getAttribute('data-k');
+      if(a === 'ch+') step(1); else if(a === 'ch-') step(-1);
+      else if(a === 'vol+') volume(1); else if(a === 'vol-') volume(-1);
+      else if(a === 'power') power();
+    });
+  });
+  $$('.tune button').forEach(function(b){ b.addEventListener('click', function(){ if(!powered) power(); setChannel(+b.getAttribute('data-tune'), true); }); });
+
+  /* static, paused offscreen and in background tabs */
+  var cv = $('#snow'), cx = cv.getContext('2d'), img = cx.createImageData(cv.width, cv.height), tvVisible = true;
+  function snow(){ var d = img.data; for(var i = 0; i < d.length; i += 4){ var v = Math.random() * 255 | 0; d[i] = v * .9; d[i+1] = v * .95; d[i+2] = v; d[i+3] = 255; } cx.putImageData(img, 0, 0); }
+  snow();
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){ tvVisible = e[0].isIntersecting; }).observe(glass);
+  var lastSnow = 0;
+  (function loop(ts){ requestAnimationFrame(loop); if(RM || !tvVisible || document.hidden || ts - lastSnow < 70) return; lastSnow = ts; snow(); })(0);
+
+  /* ---------- the contortion: something presses the glass from inside ---------- */
+  var mapURL = (function(){
+    var W = 160, H = 120, c = document.createElement('canvas'); c.width = W; c.height = H;
+    var g = c.getContext('2d'), im = g.createImageData(W, H), d = im.data;
+    // a broad push and four narrower points above it
+    var P = [[.5,.6,.22,1],[.37,.3,.06,.5],[.46,.25,.065,.55],[.555,.26,.065,.55],[.64,.33,.055,.45],[.27,.56,.06,.35]];
+    var vx = new Float32Array(W*H), vy = new Float32Array(W*H), mx = 0;
+    for(var y = 0; y < H; y++) for(var x = 0; x < W; x++){
+      var u = x / W, v = y / H * .75, ax = 0, ay = 0;
+      for(var k = 0; k < P.length; k++){ var dx = u - P[k][0], dy = v - P[k][1] * .75, r2 = (dx*dx + dy*dy) / (P[k][2]*P[k][2]), f = Math.exp(-r2) * P[k][3]; ax -= dx / P[k][2] * f; ay -= dy / P[k][2] * f; }
+      var j = y * W + x; vx[j] = ax; vy[j] = ay; mx = Math.max(mx, Math.abs(ax), Math.abs(ay));
+    }
+    for(var n = 0; n < W*H; n++){ d[n*4] = 128 + vx[n] / mx * 127; d[n*4+1] = 128 + vy[n] / mx * 127; d[n*4+2] = 128; d[n*4+3] = 255; }
+    g.putImageData(im, 0, 0); return c.toDataURL();
+  })();
+  var fImg = $('#bulgeMap'), fDisp = $('#bulgeDisp'), press = $('#press');
+  fImg.setAttribute('href', mapURL); fImg.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', mapURL);
+  function sizeMap(){ var w = feed.offsetWidth, h = feed.offsetHeight; fImg.setAttribute('width', w); fImg.setAttribute('height', h); return w; }
+  var warping = false;
+  function env(t){ // 0..1 over ~2.8s: a push, a give, a harder push, a tremble, then it lets go
+    function sm(a, b, x){ x = Math.max(0, Math.min(1, (x - a) / (b - a))); return x * x * (3 - 2 * x); }
+    var e = .55 * sm(0, .55, t) - .25 * sm(.55, .9, t) + .7 * sm(.9, 1.6, t);
+    if(t > 1.6 && t < 2.25) e += Math.sin(t * 38) * .035;
+    if(t >= 2.25) e = 1 * (1 - sm(2.25, 2.42, t)) - .14 * Math.sin(Math.min(1, (t - 2.25) / .55) * Math.PI) ;
+    return t > 2.8 ? 0 : e;
+  }
+  function contort(){
+    if(warping || RM || !powered || !tvVisible || document.hidden) return;
+    warping = true; var w = sizeMap(), t0 = performance.now();
+    tv.classList.add('warping');
+    (function fr(now){
+      var t = (now - t0) / 1000, e = env(t);
+      fDisp.setAttribute('scale', (e * w * .16).toFixed(2));
+      press.style.opacity = Math.max(0, e).toFixed(3);
+      feed.style.transform = 'scale(' + (1 + Math.max(0, e) * .025).toFixed(4) + ')';
+      if(t < 2.8) requestAnimationFrame(fr);
+      else { fDisp.setAttribute('scale', '0'); press.style.opacity = 0; feed.style.transform = ''; tv.classList.remove('warping'); warping = false; }
+    })(t0);
+  }
+  window.__contort = contort;   // for testing
+  function schedule(first){ setTimeout(function(){ contort(); schedule(false); }, first ? 10000 : 25000 + Math.random() * 20000); }
+
+  /* ---------- inspect mode ---------- */
+  var inspecting = false, pick = $('#pick'), ibg = $('#ibg'), hudT = $('#ihudTop'), hudR = $('#ihudRemote');
+  var ry = -10, rx = -4, lastFocus = null, liveEl = null;
+  var outside = [];
+  function announce(n){
+    if(!liveEl){ liveEl = document.createElement('p'); liveEl.className = 'sr'; liveEl.setAttribute('aria-live', 'polite'); hudT.appendChild(liveEl); }
+    var names = {3:'Channel 3, on air', 4:'Channel 4, hours: every day 11 AM to 2 AM', 5:'Channel 5, what we carry', 6:'Channel 6, directions. Open in Maps link on screen.', 7:'Channel 7, call (480) 284-4397. Call link on screen.', 13:'Channel 13. Nothing.'};
+    liveEl.textContent = names[n] || '';
+  }
+  function setRot(){ tv.style.setProperty('--ry', ry + 'deg'); tv.style.setProperty('--rx', rx + 'deg'); }
+  function enter(){
+    if(inspecting) return;
+    inspecting = true; lastFocus = document.activeElement;
+    wrapEl.style.transform = '';
+    var r = wrapEl.getBoundingClientRect(), vw = innerWidth, vh = innerHeight;
+    var room = vw < 700 ? .96 : .74, k = Math.min(1.7, vw * room / r.width, vh * (vw < 700 ? .56 : .66) / r.height);
+    var dx = vw / 2 - (r.left + r.width / 2), dy = vh * (vw < 700 ? .4 : .47) - (r.top + r.height / 2);
+    wrapEl.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(' + k.toFixed(3) + ')';
+    root.classList.add('is-inspecting'); wrapEl.classList.add('inspecting');
+    root.style.overflow = 'hidden';
+    ry = -10; rx = -4; setRot();
+    hudT.hidden = false; hudR.hidden = false;
+    outside = [$('.top'), $('.listing'), $('#carry'), $('#hours'), $('#visit'), $('footer.signoff'), $('.skip')];
+    outside.forEach(function(n){ n && n.setAttribute('inert', ''); });
+    $$('.key').forEach(function(k){ k.tabIndex = 0; });
+    syncLinks();
+    setChannel(ch, false);
+    setTimeout(function(){ ($('.tune button[aria-pressed="true"]') || $('#iclose')).focus({preventScroll:true}); }, RM ? 0 : 450);
+  }
+  function exit(){
+    if(!inspecting) return;
+    inspecting = false;
+    wrapEl.style.transform = '';
+    root.classList.remove('is-inspecting'); wrapEl.classList.remove('inspecting');
+    root.style.overflow = '';
+    tv.style.removeProperty('--ry'); tv.style.removeProperty('--rx');
+    hudT.hidden = true; hudR.hidden = true;
+    outside.forEach(function(n){ n && n.removeAttribute('inert'); });
+    $$('.key').forEach(function(k){ k.tabIndex = -1; });
+    syncLinks(); setChannel(ch, false);
+    (lastFocus && lastFocus !== document.body ? lastFocus : pick).focus({preventScroll:true});
+  }
+  pick.addEventListener('click', enter);
+  $('#iclose').addEventListener('click', exit);
+  ibg.addEventListener('click', exit);
+  wrapEl.addEventListener('click', function(e){ if(inspecting && !dragMoved && (e.target === wrapEl || e.target.classList.contains('hint-inspect'))) exit(); });
+  document.addEventListener('keydown', function(e){
+    if(!inspecting) return;
+    if(e.key === 'Escape'){ e.preventDefault(); exit(); return; }
+    var map = {ArrowLeft:[0,-8], ArrowRight:[0,8], ArrowUp:[6,0], ArrowDown:[-6,0]};
+    if(map[e.key] && !(e.target.closest && e.target.closest('.tune'))){ e.preventDefault(); ry = clamp(ry + map[e.key][1], -55, 55); rx = clamp(rx + map[e.key][0], -28, 18); setRot(); }
+  });
+  function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+
+  // drag to turn
+  var drag = null, dragMoved = false;
+  stage.addEventListener('pointerdown', function(e){
+    if(!inspecting || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    drag = {x:e.clientX, y:e.clientY, ry:ry, rx:rx, id:e.pointerId, live:false}; dragMoved = false;
+  });
+  window.addEventListener('pointermove', function(e){
+    if(!drag || e.pointerId !== drag.id) return;
+    var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if(!drag.live && Math.abs(dx) + Math.abs(dy) > 6){ drag.live = true; dragMoved = true; wrapEl.classList.add('dragging'); try{ stage.setPointerCapture(e.pointerId); }catch(_){} }
+    if(drag.live){ ry = clamp(drag.ry + dx * .3, -55, 55); rx = clamp(drag.rx - dy * .22, -28, 18); setRot(); }
+  });
+  function endDrag(){ if(!drag) return; wrapEl.classList.remove('dragging'); drag = null; setTimeout(function(){ dragMoved = false; }, 0); }
+  window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
+  stage.addEventListener('click', function(e){ if(dragMoved){ e.preventDefault(); e.stopPropagation(); } }, true);
+
+  // a little parallax while idle (fine pointers only)
+  var hero = $('.room');
+  if(window.matchMedia && matchMedia('(pointer:fine)').matches){
+    hero.addEventListener('pointermove', function(e){
+      if(RM || inspecting) return;
+      var r = hero.getBoundingClientRect(), nx = (e.clientX - r.left) / r.width - .5, ny = (e.clientY - r.top) / r.height - .5;
+      tv.style.setProperty('--px', (nx * 7).toFixed(2) + 'deg'); tv.style.setProperty('--py', (-ny * 4).toFixed(2) + 'deg');
+    });
+    hero.addEventListener('pointerleave', function(){ tv.style.setProperty('--px', '0deg'); tv.style.setProperty('--py', '0deg'); });
+  }
+
+  /* ---------- reveal ---------- */
+  var rv = $$('.rv');
+  if('IntersectionObserver' in window && !RM){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+    rv.forEach(function(n){ io.observe(n); });
+  } else rv.forEach(function(n){ n.classList.add('in'); });
+
+  /* ---------- the tab notices when you leave ---------- */
+  var title = document.title;
+  document.addEventListener('visibilitychange', function(){ document.title = document.hidden ? 'come back.' : title; });
+
+  function start(){ if(started) return; started = true; if(!RM) schedule(true); }
 })();
 </script>
 </body>
