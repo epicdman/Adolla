@@ -738,7 +738,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
           </div>
         </div></div>
       </div>
-      <span class="hint-inspect" aria-hidden="true"><span class="hm">Click the screen to inspect it</span><span class="ht">Tap the screen to inspect it</span></span>
+      <span class="hint-inspect" aria-hidden="true"><span class="hm">Click the screen to inspect it</span><span class="ht">Tap the screen to change the channel</span></span>
     </div>
 
     <div class="listing">
@@ -866,7 +866,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
           <rect x="1006" y="218" width="318" height="250" fill="#8a7258" opacity=".5"/>
           <!-- something behind the blinds, now and then: only the eyes -->
           <g id="ccPeek" opacity="0">
-            <ellipse id="ccShade" cx="0" cy="0" rx="84" ry="18" fill="url(#ccShadeG)"/>
+            <path id="ccGap" fill="#050606"/><ellipse id="ccShade" cx="0" cy="0" rx="1" ry="1" fill="none" opacity="0"/>
             <g id="ccEyes">
               <g filter="url(#ccSoft)" fill="#f4f8f0" opacity=".75"><ellipse cx="-17" cy="0" rx="10" ry="5.4"/><ellipse cx="17" cy="0" rx="10" ry="5.4"/></g>
               <g fill="#fbfdf8"><ellipse cx="-17" cy="0" rx="7.4" ry="3.6"/><ellipse cx="17" cy="0" rx="7.4" ry="3.6"/></g>
@@ -1119,6 +1119,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
   /* ---------- the set ---------- */
   var tv = $('#tv'), glass = $('#glass'), wrapEl = $('#tvwrap'), stage = $('#stage'), screenBtn = $('#screenbtn');
   var ch = 3, powered = true, vol = 9;
+  var TOUCH = function(){ return !!(window.matchMedia && matchMedia('(hover:none) and (pointer:coarse)').matches); };   // phones: no inspect mode, the screen changes the channel
   function setChannel(n, burst){
     ch = n;
     $$('.ch', pic).forEach(function(c){
@@ -1135,7 +1136,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
   }
   function syncScreenBtn(){
     screenBtn.tabIndex = (!inspecting || ch === 13) ? 0 : -1;
-    screenBtn.setAttribute('aria-label', inspecting ? 'Touch the screen' : 'Inspect the TV');
+    screenBtn.setAttribute('aria-label', inspecting ? 'Touch the screen' : TOUCH() ? 'Change channel' : 'Inspect the TV');
   }
   // changing channel: a static burst (never more than about 2.5 a second, however fast the button is pressed) and the picture rolls into hold
   var lastBurst = 0, burstT;
@@ -1371,7 +1372,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
     snow();
   }
   function ring13(){
-    if(seq || warping || !powered || ch !== 13 || !inspecting) return;
+    if(seq || warping || !powered || ch !== 13 || (!inspecting && !TOUCH())) return;
     // calm: the same ring, gathered slowly and let go slowly. No tremble, no tear, a much smaller swell.
     var calm = CALM, DUR = calm ? 5.6 : 3.0;
     seq = {t0:performance.now(), tore:false, calm:calm}; warping = true;
@@ -1405,7 +1406,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
     })(seq.t0);
   }
   // the screen is the only way into inspect mode; inside it, on channel 13, it is something to touch
-  screenBtn.addEventListener('click', function(e){ if(dragMoved){ e.preventDefault(); return; } if(!inspecting){ enter(); return; } ring13(); });
+  screenBtn.addEventListener('click', function(e){ if(dragMoved){ e.preventDefault(); return; } if(TOUCH() && !inspecting){ if(ch === 13) ring13(); else step(1); return; } if(!inspecting){ enter(); return; } ring13(); });
 
   /* ---------- inspect mode ---------- */
   var inspecting = false, ibg = $('#ibg'), hudT = $('#ihudTop'), hudR = $('#ihudRemote');
@@ -1527,6 +1528,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
     setChannel(n, false);
     returnY = scrollY;
     var target = Math.max(0, scrollY + hero.getBoundingClientRect().top - 8);
+    if(TOUCH()){ scrollTo(CALM ? {top:target} : {top:target, behavior:'smooth'}); return; }   // phones: tune it and show it, no inspect mode
     if(CALM || Math.abs(scrollY - target) < 4){ scrollTo(0, target); enter(); return; }
     scrollTo({top:target, behavior:'smooth'});
     var t0 = performance.now();
@@ -1630,13 +1632,20 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
       if(t > 1.25 && t < 1.45) blink = .08 + .92 * Math.abs(Math.cos((t - 1.25) / .2 * Math.PI));
     }
     var lo = SLATS[p.k + 1], up = SLATS[p.k];
-    lo.setAttribute('d', slatPath(yk + 22, [p.x0, 1.15 * D, 104])); up.setAttribute('d', slatPath(yk, [p.x0, -.8 * D, 104]));   // both slats are pushed clear of each other: a real gap opens
+    lo.setAttribute('d', slatPath(yk + 22, [p.x0, 1.15 * D, 74])); up.setAttribute('d', slatPath(yk, [p.x0, -.8 * D, 74]));   // both slats are pushed clear of each other: a real gap opens
     var ey = yk + 17.5 + .175 * D + sink;   // the middle of the gap
-    peekG.setAttribute('opacity', Math.min(1, D / 14).toFixed(3));
-    shade.setAttribute('cx', p.x0.toFixed(1)); shade.setAttribute('cy', ey.toFixed(1));
+    // the room behind is only seen through the opening the two slats leave: a dark strip between the lower edge of the upper
+    // slat and the upper edge of the lower one (same bend as the slats), so nothing fades in over them
+    var A = [], B = [];
+    for(var j = 0; j <= 40; j++){
+      var gx = 1006 + j * 7.95, f = Math.exp(-Math.pow((gx - p.x0) / 74, 2));
+      A.push(gx.toFixed(1) + ' ' + (yk + 13 + (-.8 * D * f) * .92).toFixed(1)); B.unshift(gx.toFixed(1) + ' ' + (yk + 22 + 1.15 * D * f).toFixed(1));
+    }
+    $('#ccGap').setAttribute('d', 'M' + A.join('L') + 'L' + B.join('L') + 'Z');
+    peekG.setAttribute('opacity', '1'); $('#ccGap').setAttribute('opacity', Math.min(1, D / 7).toFixed(3));
     eyesG.setAttribute('transform', 'translate(' + p.x0.toFixed(1) + ' ' + ey.toFixed(1) + ') scale(1 ' + blink.toFixed(3) + ')');
     eyesG.setAttribute('opacity', eyes.toFixed(3));
-    if(t >= p.d){ lo.setAttribute('d', slatPath(yk + 22)); up.setAttribute('d', slatPath(yk)); peekG.setAttribute('opacity', '0'); peek = null; }
+    if(t >= p.d){ lo.setAttribute('d', slatPath(yk + 22)); up.setAttribute('d', slatPath(yk)); peekG.setAttribute('opacity', '0'); $('#ccGap').setAttribute('d', ''); peek = null; }
   }
   // flies: steer toward a moving point around the lamp, with sudden jinks; now and then one leaves and comes back
   var LAMP_X = 880, LAMP_Y = 150, flies = [];
