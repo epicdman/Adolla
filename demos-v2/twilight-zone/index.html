@@ -866,7 +866,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
           <rect x="1006" y="218" width="318" height="250" fill="#8a7258" opacity=".5"/>
           <!-- something behind the blinds, now and then: only the eyes -->
           <g id="ccPeek" opacity="0">
-            <ellipse id="ccShade" cx="0" cy="0" rx="66" ry="13" fill="url(#ccShadeG)"/>
+            <ellipse id="ccShade" cx="0" cy="0" rx="84" ry="18" fill="url(#ccShadeG)"/>
             <g id="ccEyes">
               <g filter="url(#ccSoft)" fill="#f4f8f0" opacity=".75"><ellipse cx="-17" cy="0" rx="10" ry="5.4"/><ellipse cx="17" cy="0" rx="10" ry="5.4"/></g>
               <g fill="#fbfdf8"><ellipse cx="-17" cy="0" rx="7.4" ry="3.6"/><ellipse cx="17" cy="0" rx="7.4" ry="3.6"/></g>
@@ -1086,7 +1086,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
   function slatPath(y, bump){   // bump: [x0, depth]; the slat bends where a finger pulls it
     var top = [], bot = [];
     for(var j = 0; j <= 40; j++){
-      var x = 1006 + j * 7.95, o = bump ? bump[1] * Math.exp(-Math.pow((x - bump[0]) / 46, 2)) : 0;
+      var x = 1006 + j * 7.95, o = bump ? bump[1] * Math.exp(-Math.pow((x - bump[0]) / (bump[2] || 46), 2)) : 0;
       top.push(x.toFixed(1) + ' ' + (y + o).toFixed(1)); bot.unshift(x.toFixed(1) + ' ' + (y + 13 + o * .92).toFixed(1));
     }
     return 'M' + top.join('L') + 'L' + bot.join('L') + 'Z';
@@ -1614,7 +1614,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
   }
   function startPeek(now){
     var k = 2 + Math.floor(Math.random() * 6); if(k === TILT || k + 1 === TILT) k = TILT > 5 ? 2 : 6;
-    peek = {t0:now, k:k, x0:1060 + Math.random() * 210, d:CALM ? 5.2 : 3.3};
+    peek = {t0:now, k:k, x0:1112 + Math.random() * 118, d:CALM ? 5.2 : 3.3};
   }
   function peekFrame(now){
     var p = peek, t = (now - p.t0) / 1000, D, eyes, blink = 1, sink = 0, yk = 222 + p.k * 22;
@@ -1626,12 +1626,12 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
       // a flick down, a little overshoot, a hold; the eyes come up, blink once, slip back; the slat snaps home
       D = t < .22 ? 26 * sm(0, .22, t) : t < .5 ? 26 - 4 * Math.sin((t - .22) / .28 * Math.PI) : 24;
       if(t > 2.45) D = 24 * (1 - sm(2.45, 2.75, t)) + (t > 2.75 ? 3 * Math.exp(-(t - 2.75) * 9) * Math.sin((t - 2.75) * 40) : 0);
-      eyes = sm(.4, .62, t) * (1 - sm(2.15, 2.42, t)); sink = 4 * sm(2.15, 2.42, t);
+      eyes = sm(.34, .46, t) * (1 - sm(2.15, 2.3, t)); sink = 3 * sm(2.15, 2.42, t);   // they are only seen once the gap is open
       if(t > 1.25 && t < 1.45) blink = .08 + .92 * Math.abs(Math.cos((t - 1.25) / .2 * Math.PI));
     }
     var lo = SLATS[p.k + 1], up = SLATS[p.k];
-    lo.setAttribute('d', slatPath(yk + 22, [p.x0, D])); up.setAttribute('d', slatPath(yk, [p.x0, -.38 * D]));
-    var ey = yk + 17.5 + .31 * D + sink;
+    lo.setAttribute('d', slatPath(yk + 22, [p.x0, 1.15 * D, 104])); up.setAttribute('d', slatPath(yk, [p.x0, -.8 * D, 104]));   // both slats are pushed clear of each other: a real gap opens
+    var ey = yk + 17.5 + .175 * D + sink;   // the middle of the gap
     peekG.setAttribute('opacity', Math.min(1, D / 14).toFixed(3));
     shade.setAttribute('cx', p.x0.toFixed(1)); shade.setAttribute('cy', ey.toFixed(1));
     eyesG.setAttribute('transform', 'translate(' + p.x0.toFixed(1) + ' ' + ey.toFixed(1) + ') scale(1 ' + blink.toFixed(3) + ')');
