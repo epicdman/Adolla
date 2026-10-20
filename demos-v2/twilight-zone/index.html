@@ -1615,7 +1615,7 @@ table.week{width:100%;margin-top:16px;border-collapse:collapse;table-layout:fixe
     steps.forEach(function(st){ neonTimers.push(setTimeout(function(){ neonSet(st[0], st[2] || 0); }, at)); at += st[1]; });
   }
   function startPeek(now){
-    var k = 2 + Math.floor(Math.random() * 6); if(k === TILT || k + 1 === TILT) k = TILT > 5 ? 2 : 6;
+    var k = 2 + Math.floor(Math.random() * 3); if(k === TILT || k + 1 === TILT) k = TILT > 4 ? 2 : 4;   // eye level: the upper third of the window, not down by the sill
     peek = {t0:now, k:k, x0:1112 + Math.random() * 118, d:CALM ? 5.2 : 3.3};
   }
   function peekFrame(now){
